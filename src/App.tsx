@@ -10,6 +10,7 @@ import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import Booking from "./pages/Booking";
+import Bookings from "./pages/Bookings"; // Nova página de agendamento
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/precos" element={<Pricing />} />
           <Route path="/contato" element={<Contact />} />
           <Route path="/agendamento" element={<Booking />} />
+          <Route path="/agenda" element={<Bookings />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

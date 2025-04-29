@@ -37,7 +37,7 @@ const CtaSection: React.FC = () => {
               size="lg"
               className="bg-astro-orange hover:bg-astro-orange/90 text-white font-semibold px-8 py-6 text-lg"
             >
-              <Link to="/agendamento">Agendar Diagnóstico Grátis</Link>
+              <Link to="/agenda">Agendar com Google Calendar</Link>
             </Button>
           </div>
           <div className="hidden lg:block">

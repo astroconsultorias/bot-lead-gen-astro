@@ -27,7 +27,7 @@ const HeroSection: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild className="bg-astro-orange hover:bg-astro-orange/90 text-white font-semibold px-8 py-6 text-lg">
-              <Link to="/agendamento">Agendar Diagnóstico Grátis</Link>
+              <Link to="/agenda">Agendar com Google Calendar</Link>
             </Button>
             <Button size="lg" asChild variant="outline" className="border-white text-white hover:bg-white/10">
               <Link to="/servicos">Conhecer Serviços</Link>
