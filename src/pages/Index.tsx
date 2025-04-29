@@ -11,12 +11,14 @@ import CtaSection from "@/components/home/CtaSection";
 const Index: React.FC = () => {
   return (
     <Layout>
-      <HeroSection />
-      <ProblemSection />
-      <SolutionSection />
-      <BenefitsSection />
-      <TestimonialsSection />
-      <CtaSection />
+      <div className="flex flex-col w-full">
+        <HeroSection />
+        <ProblemSection />
+        <SolutionSection />
+        <BenefitsSection />
+        <TestimonialsSection />
+        <CtaSection />
+      </div>
     </Layout>
   );
 };

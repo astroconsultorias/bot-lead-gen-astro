@@ -49,8 +49,18 @@ const ImageUpload: React.FC = () => {
 
             <div>
               <h2 className="text-xl font-semibold mb-4">Imagem Hero Section</h2>
+              <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
+                <p className="text-gray-600">Imagem atual:</p>
+                <div className="w-full max-w-xs h-32 rounded-md overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/cfb1f5b2-6802-4839-ac80-10d50e1465fc.png" 
+                    alt="Imagem de fundo da Hero Section" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
               <ImageUploader
-                label="Upload Imagem Hero"
+                label="Atualizar Imagem Hero"
                 onImageSelect={handleImageSelect}
               />
               <p className="text-sm text-gray-500 mt-2">
