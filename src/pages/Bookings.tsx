@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
@@ -20,7 +19,7 @@ import {
   CheckCircle, 
   CalendarRange, 
   PhoneCall,
-  WhatsApp
+  MessageSquare
 } from "lucide-react";
 import { toast } from "sonner";
 import { format } from "date-fns";
@@ -31,6 +30,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
+import CalendarPlus from "@/components/icons/CalendarPlus";
 
 const Bookings: React.FC = () => {
   const [step, setStep] = useState(1);
@@ -466,7 +466,7 @@ const Bookings: React.FC = () => {
                       }), '_blank');
                     }}
                   >
-                    <WhatsApp className="h-5 w-5 mr-1" />
+                    <MessageSquare className="h-5 w-5 mr-1" />
                     Confirmar via WhatsApp
                   </Button>
                 </div>
