@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '@/components/layout/Layout';
 import ImageUploader from '@/components/ImageUploader';
 import { Badge } from '@/components/ui/badge';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const ImageUpload: React.FC = () => {
   const handleImageSelect = (file: File) => {
@@ -30,12 +31,19 @@ const ImageUpload: React.FC = () => {
           <div className="grid gap-8">
             <div>
               <h2 className="text-xl font-semibold mb-4">Logo da Empresa</h2>
+              <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
+                <p className="text-gray-600">Logo atual:</p>
+                <Avatar className="h-20 w-20">
+                  <AvatarImage src="/lovable-uploads/1e21dbc2-5ede-422e-b8fb-5d0c7c77f6ce.png" alt="Astro Consultoria" />
+                  <AvatarFallback>AC</AvatarFallback>
+                </Avatar>
+              </div>
               <ImageUploader
-                label="Upload do Logo"
+                label="Atualizar Logo"
                 onImageSelect={handleImageSelect}
               />
               <p className="text-sm text-gray-500 mt-2">
-                Tamanho recomendado: 200x60px, formato PNG com fundo transparente
+                Tamanho recomendado: 200x200px, formato PNG com fundo transparente
               </p>
             </div>
 

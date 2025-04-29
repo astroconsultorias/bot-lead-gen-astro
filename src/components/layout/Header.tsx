@@ -13,12 +13,13 @@ const Header: React.FC = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
-      <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-6">
+      <div className="container mx-auto flex items-center justify-between py-2 px-4 md:px-6">
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-2xl font-bold bg-gradient-to-r from-astro-blue to-astro-purple bg-clip-text text-transparent">
-            Astro
-          </span>
-          <span className="text-lg font-medium text-gray-700">Consultoria</span>
+          <img 
+            src="/lovable-uploads/1e21dbc2-5ede-422e-b8fb-5d0c7c77f6ce.png" 
+            alt="Astro Consultoria Logo" 
+            className="h-14 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}

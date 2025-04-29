@@ -13,8 +13,11 @@ const Footer: React.FC = () => {
           {/* Column 1 - Logo and Info */}
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-2xl font-bold text-white">Astro</span>
-              <span className="text-lg font-medium text-astro-light/80">Consultoria</span>
+              <img 
+                src="/lovable-uploads/1e21dbc2-5ede-422e-b8fb-5d0c7c77f6ce.png" 
+                alt="Astro Consultoria Logo" 
+                className="h-16 w-auto"
+              />
             </div>
             <p className="text-sm text-astro-light/80 mb-4">
               Automação de atendimento via WhatsApp com bots inteligentes e treinamento científico para equipes.

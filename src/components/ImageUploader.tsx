@@ -1,6 +1,6 @@
 
 import React, { ChangeEvent, useState } from 'react';
-import { Upload, Image } from 'lucide-react';
+import { Upload, Image, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 
@@ -8,15 +8,17 @@ interface ImageUploaderProps {
   onImageSelect?: (file: File) => void;
   label?: string;
   className?: string;
+  initialImage?: string;
 }
 
 const ImageUploader: React.FC<ImageUploaderProps> = ({
   onImageSelect,
   label = "Selecionar Imagem",
-  className = ""
+  className = "",
+  initialImage
 }) => {
   const { toast } = useToast();
-  const [preview, setPreview] = useState<string | null>(null);
+  const [preview, setPreview] = useState<string | null>(initialImage || null);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -58,6 +60,15 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
     }
   };
 
+  const clearImage = () => {
+    setPreview(null);
+    // Reset file input
+    const fileInput = document.getElementById('image-upload') as HTMLInputElement;
+    if (fileInput) {
+      fileInput.value = '';
+    }
+  };
+
   return (
     <div className={`flex flex-col items-center gap-4 ${className}`}>
       <input
@@ -68,30 +79,45 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({
         id="image-upload"
       />
       
-      <label 
-        htmlFor="image-upload"
-        className="cursor-pointer flex flex-col items-center gap-2"
-      >
-        {preview ? (
-          <div className="relative group">
-            <img
-              src={preview}
-              alt="Preview"
-              className="max-w-[200px] max-h-[200px] object-contain rounded-lg"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
-              <Upload className="text-white" />
+      {preview ? (
+        <div className="relative group">
+          <img
+            src={preview}
+            alt="Preview"
+            className="max-w-[200px] max-h-[200px] object-contain rounded-lg border border-gray-200"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
+            <div className="flex gap-2">
+              <Button 
+                variant="ghost" 
+                size="icon"
+                onClick={clearImage}
+                className="bg-white/80 hover:bg-white text-red-500 rounded-full"
+              >
+                <X size={18} />
+              </Button>
+              <label 
+                htmlFor="image-upload"
+                className="bg-white/80 hover:bg-white text-blue-500 p-2 rounded-full cursor-pointer"
+              >
+                <Upload size={18} />
+              </label>
             </div>
           </div>
-        ) : (
+        </div>
+      ) : (
+        <label 
+          htmlFor="image-upload"
+          className="cursor-pointer"
+        >
           <Button variant="outline" className="w-[200px] h-[200px] border-dashed">
             <div className="flex flex-col items-center gap-2">
               <Image size={40} />
               <span>{label}</span>
             </div>
           </Button>
-        )}
-      </label>
+        </label>
+      )}
     </div>
   );
 };
