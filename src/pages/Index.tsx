@@ -7,6 +7,7 @@ import SolutionSection from "@/components/home/SolutionSection";
 import BenefitsSection from "@/components/home/BenefitsSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CtaSection from "@/components/home/CtaSection";
+import CredibilitySection from "@/components/home/CredibilitySection";
 
 const Index: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Index: React.FC = () => {
         <ProblemSection />
         <SolutionSection />
         <BenefitsSection />
+        <CredibilitySection />
         <TestimonialsSection />
         <CtaSection />
       </div>

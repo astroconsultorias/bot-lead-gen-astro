@@ -5,19 +5,31 @@ import { Link } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
   return (
-    <section 
-      className="relative text-white py-32 lg:py-48 overflow-hidden"
-      style={{ 
-        backgroundImage: "linear-gradient(to bottom, rgba(30, 58, 138, 0.85), rgba(124, 58, 237, 0.85)), url('/lovable-uploads/cfb1f5b2-6802-4839-ac80-10d50e1465fc.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-astro-blue/40 to-transparent"></div>
+    <section className="relative text-white py-32 lg:py-48 overflow-hidden">
+      {/* Hero Background with Overlay */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{ 
+          backgroundImage: "linear-gradient(to bottom, rgba(30, 58, 138, 0.85), rgba(124, 58, 237, 0.85)), url('/lovable-uploads/cfb1f5b2-6802-4839-ac80-10d50e1465fc.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
       
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-3xl">
+      {/* Professional Person Cutout */}
+      <div className="absolute right-0 bottom-0 h-full max-w-md lg:max-w-xl hidden lg:block z-10">
+        <div 
+          className="h-full w-full bg-contain bg-no-repeat bg-bottom"
+          style={{ 
+            backgroundImage: "url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=687&auto=format&fit=crop')",
+            backgroundSize: "contain",
+            backgroundPosition: "bottom right",
+          }}
+        />
+      </div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-20">
+        <div className="max-w-2xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Lançando Seu Negócio Para o Próximo Nível
           </h1>
@@ -27,11 +39,28 @@ const HeroSection: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild className="bg-astro-orange hover:bg-astro-orange/90 text-white font-semibold px-8 py-6 text-lg">
-              <Link to="/agenda">Agendar com Google Calendar</Link>
+              <Link to="/agenda">Agendar Diagnóstico Grátis</Link>
             </Button>
             <Button size="lg" asChild variant="outline" className="border-white text-white hover:bg-white/10">
               <Link to="/servicos">Conhecer Serviços</Link>
             </Button>
+          </div>
+          
+          {/* Trust Indicators */}
+          <div className="mt-12 flex items-center gap-6 flex-wrap">
+            <p className="text-white/80 font-medium">Clientes Satisfeitos:</p>
+            <div className="flex -space-x-3">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <div key={i} className="w-10 h-10 rounded-full border-2 border-astro-blue bg-gray-300 overflow-hidden">
+                  <img 
+                    src={`https://randomuser.me/api/portraits/men/${20 + i}.jpg`} 
+                    alt={`Cliente ${i}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+            <span className="text-white/90 text-sm">+500 empresas atendidas</span>
           </div>
         </div>
       </div>
@@ -40,6 +69,26 @@ const HeroSection: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-full">
         <div className="absolute bottom-0 left-1/4 w-32 h-32 bg-astro-orange rounded-full opacity-10 animate-float"></div>
         <div className="absolute bottom-20 right-1/4 w-24 h-24 bg-astro-purple rounded-full opacity-20 animate-float" style={{ animationDelay: "1.5s" }}></div>
+      </div>
+      
+      {/* Professional Badge */}
+      <div className="absolute bottom-8 left-8 bg-white/10 backdrop-blur-md px-4 py-2 rounded-lg border border-white/20 z-20 hidden md:flex items-center gap-3">
+        <div className="w-12 h-12 rounded-full bg-astro-blue flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+            <path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"></path>
+            <path d="m14 7 3 3"></path>
+            <path d="M5 6v4"></path>
+            <path d="M19 14v4"></path>
+            <path d="M10 2v2"></path>
+            <path d="M7 8H3"></path>
+            <path d="M21 16h-4"></path>
+            <path d="M11 3H9"></path>
+          </svg>
+        </div>
+        <div>
+          <p className="text-sm font-semibold">Especialistas em Automação</p>
+          <p className="text-xs text-white/70">Certificados e Qualificados</p>
+        </div>
       </div>
     </section>
   );

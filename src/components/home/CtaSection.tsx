@@ -45,10 +45,21 @@ const CtaSection: React.FC = () => {
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-astro-orange rounded-full opacity-10 animate-float"></div>
               <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-astro-purple rounded-full opacity-10 animate-float" style={{ animationDelay: "1.5s" }}></div>
               <img
-                src="https://placehold.co/500x400/F97316/FFF?text=Diagnóstico+Grátis"
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
                 alt="Especialista realizando diagnóstico"
                 className="w-full h-auto rounded-lg shadow-2xl relative z-10"
               />
+              <div className="absolute bottom-4 right-4 bg-white rounded-lg shadow-lg p-4 z-20">
+                <div className="flex items-center gap-3">
+                  <div className="rounded-full bg-green-100 p-2">
+                    <CheckCircle className="h-5 w-5 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-sm">Diagnóstico Grátis</p>
+                    <p className="text-gray-500 text-xs">Sem compromisso</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
