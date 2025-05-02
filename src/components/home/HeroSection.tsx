@@ -16,13 +16,13 @@ const HeroSection: React.FC = () => {
         }}
       />
       
-      {/* Logo in larger size */}
-      <div className="absolute top-10 md:top-16 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="bg-white/90 rounded-full p-4 md:p-6 shadow-lg">
+      {/* Logo in top left corner */}
+      <div className="absolute top-6 left-6 md:left-10 z-20">
+        <div className="bg-white/90 rounded-full p-3 md:p-4 shadow-lg">
           <img 
-            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=687&auto=format&fit=crop" 
+            src="/lovable-uploads/1e21dbc2-5ede-422e-b8fb-5d0c7c77f6ce.png" 
             alt="AstroAtendimento Logo" 
-            className="w-24 h-24 md:w-32 md:h-32 object-contain"
+            className="w-16 h-16 md:w-24 md:h-24 object-contain"
           />
         </div>
       </div>
@@ -39,7 +39,7 @@ const HeroSection: React.FC = () => {
         />
       </div>
       
-      <div className="container mx-auto px-4 md:px-6 relative z-20 mt-24 md:mt-28">
+      <div className="container mx-auto px-4 md:px-6 relative z-20">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Lançando Seu Negócio Para o Próximo Nível
