@@ -3,6 +3,7 @@ import React from "react";
 import { Bot, Users, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import solutionHero from "@/assets/solution-hero.png";
 
 const SolutionSection: React.FC = () => {
   return (
@@ -69,8 +70,8 @@ const SolutionSection: React.FC = () => {
           </div>
           <div className="order-1 lg:order-2">
             <img
-              src="https://placehold.co/600x500/7C3AED/FFF?text=Solução+Astro"
-              alt="Solução completa da Astro Consultoria"
+              src={solutionHero}
+              alt="Dashboard profissional de automação WhatsApp e analytics da Astro Consultoria"
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
