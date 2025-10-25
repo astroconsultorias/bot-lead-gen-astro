@@ -5,7 +5,7 @@ import { CheckCircle, Clock, MessageSquare, Calendar, Video } from "lucide-react
 import { Link } from "react-router-dom";
 
 const ExpressSection: React.FC = () => {
-  const whatsappNumber = "5511999999999"; // Substitua pelo número real
+  const whatsappNumber = "5551981520555";
   const whatsappMessage = encodeURIComponent("Quero meu AstroAtendimento Express");
 
   return (
