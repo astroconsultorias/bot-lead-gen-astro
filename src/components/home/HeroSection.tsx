@@ -52,7 +52,7 @@ const HeroSection: React.FC = () => {
             <Button size="lg" asChild className="bg-astro-orange hover:bg-astro-orange/90 text-white font-semibold px-8 py-6 text-lg">
               <Link to="/agenda">Agendar Diagnóstico Grátis</Link>
             </Button>
-            <Button size="lg" asChild variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button size="lg" asChild variant="outline" className="border-2 border-white bg-white/10 text-white hover:bg-white/20 font-semibold">
               <Link to="/servicos">Conhecer Serviços</Link>
             </Button>
           </div>
