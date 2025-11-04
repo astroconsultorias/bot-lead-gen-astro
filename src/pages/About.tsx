@@ -2,6 +2,7 @@
 import React from "react";
 import Layout from "@/components/layout/Layout";
 import { Badge } from "@/components/ui/badge";
+import JeanCesarSection from "@/components/about/JeanCesarSection";
 
 const About: React.FC = () => {
   return (
@@ -59,6 +60,8 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <JeanCesarSection />
 
       <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-astro-light">
         <div className="container mx-auto px-4 md:px-6">
