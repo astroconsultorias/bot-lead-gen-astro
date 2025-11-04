@@ -42,11 +42,13 @@ const JeanCesarSection: React.FC = () => {
           <div className="flex justify-center lg:justify-end animate-fade-in">
             <div className="relative">
               <div className="absolute -inset-4 rounded-lg opacity-20 blur-xl" style={{ background: '#D1A24C' }}></div>
-              <img
-                src={jeanPortrait}
-                alt="Jean Cesar Villela Rodrigues"
-                className="relative w-full max-w-md h-auto rounded-lg shadow-2xl"
-              />
+              <div className="relative p-2 rounded-lg" style={{ background: 'linear-gradient(135deg, #D1A24C 0%, #0E3A59 100%)' }}>
+                <img
+                  src={jeanPortrait}
+                  alt="Jean Cesar Villela Rodrigues"
+                  className="w-full max-w-md h-auto rounded-lg shadow-2xl"
+                />
+              </div>
             </div>
           </div>
 
