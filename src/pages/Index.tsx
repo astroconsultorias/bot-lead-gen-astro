@@ -2,24 +2,20 @@
 import React from "react";
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/home/HeroSection";
-import ProblemSection from "@/components/home/ProblemSection";
-import SolutionSection from "@/components/home/SolutionSection";
-import BenefitsSection from "@/components/home/BenefitsSection";
+import JeanCesarSection from "@/components/about/JeanCesarSection";
+import MissionVisionValues from "@/components/home/MissionVisionValues";
+import SolutionsCards from "@/components/home/SolutionsCards";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CtaSection from "@/components/home/CtaSection";
-import CredibilitySection from "@/components/home/CredibilitySection";
-import ExpressSection from "@/components/home/ExpressSection";
 
 const Index: React.FC = () => {
   return (
     <Layout>
       <div className="flex flex-col w-full">
         <HeroSection />
-        <ProblemSection />
-        <SolutionSection />
-        <BenefitsSection />
-        <CredibilitySection />
-        <ExpressSection />
+        <JeanCesarSection />
+        <MissionVisionValues />
+        <SolutionsCards />
         <TestimonialsSection />
         <CtaSection />
       </div>

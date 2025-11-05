@@ -26,10 +26,9 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				astro: {
-					blue: '#1E3A8A',
-					purple: '#7C3AED',
-					orange: '#F97316',
-					light: '#F9FAFB',
+					blue: '#0E3A59',
+					gold: '#D1A24C',
+					white: '#FFFFFF',
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -96,6 +95,7 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
+				heading: ['Poppins', 'sans-serif'],
 			}
 		}
 	},
