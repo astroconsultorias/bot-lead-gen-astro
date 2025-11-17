@@ -39,7 +39,7 @@ const Header: React.FC = () => {
           <Link to="/contato" className="font-medium text-gray-700 hover:text-astro-blue transition-colors">
             Contato
           </Link>
-          <Button asChild className="bg-astro-orange hover:bg-astro-orange/90 text-white">
+          <Button asChild className="bg-astro-orange hover:bg-astro-orange/90 text-gray-700">
             <Link to="/agendamento">Diagnóstico Grátis</Link>
           </Button>
         </nav>
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
             <Link to="/contato" className="font-medium text-gray-700 hover:text-astro-blue transition-colors py-2" onClick={toggleMobileMenu}>
               Contato
             </Link>
-            <Button asChild className="bg-astro-orange hover:bg-astro-orange/90 text-white w-full">
+            <Button asChild className="bg-astro-orange hover:bg-astro-orange/90 text-gray-700 w-full">
               <Link to="/agendamento" onClick={toggleMobileMenu}>Diagnóstico Grátis</Link>
             </Button>
           </div>
