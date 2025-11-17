@@ -173,7 +173,7 @@ const Contact: React.FC = () => {
                       </h3>
                       <p className="text-gray-600">
                         <a
-                          href="https://wa.me/5551999041181"
+                          href="https://wa.me/5551981520555"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="hover:text-astro-blue transition-colors"
@@ -197,10 +197,10 @@ const Contact: React.FC = () => {
                       </h3>
                       <p className="text-gray-600">
                         <a
-                          href="tel:5551999041181"
+                          href="tel:5551981520555"
                           className="hover:text-astro-blue transition-colors"
                         >
-                          (51) 99904-1181
+                          (51) 98152-0555
                         </a>
                       </p>
                       <p className="text-sm text-gray-500 mt-1">
