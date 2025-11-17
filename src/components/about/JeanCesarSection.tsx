@@ -133,7 +133,7 @@ const JeanCesarSection: React.FC = () => {
             }}
           >
             <a
-              href="https://wa.me/5551999041181?text=Olá%20Jean,%20quero%20melhorar%20meu%20atendimento."
+              href="https://wa.me/5551981520555?text=Olá%20Jean,%20quero%20melhorar%20meu%20atendimento."
               target="_blank"
               rel="noopener noreferrer"
             >
