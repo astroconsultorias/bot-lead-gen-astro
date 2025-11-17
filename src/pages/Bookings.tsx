@@ -98,7 +98,7 @@ const Bookings: React.FC = () => {
       `📝 Mensagem: ${data.message || "Não informada"}`
     );
     
-    return `https://wa.me/5551999999999?text=${message}`;
+    return `https://wa.me/5551999041181?text=${message}`;
   };
 
   const onSubmit = async (data: any) => {

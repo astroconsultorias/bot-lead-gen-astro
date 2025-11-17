@@ -21,7 +21,7 @@ const CtaSection: React.FC = () => {
             className="bg-accent hover:bg-accent/90 text-primary font-bold px-12 py-8 text-xl shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105"
           >
             <a 
-              href="https://wa.me/5551999999999?text=Olá%20Jean,%20quero%20transformar%20meu%20atendimento!"
+              href="https://wa.me/5551999041181?text=Olá%20Jean,%20quero%20transformar%20meu%20atendimento!"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3"
