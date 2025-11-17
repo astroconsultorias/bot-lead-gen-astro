@@ -1,10 +1,11 @@
-
 import React from "react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Bot, CheckCircle, Users, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import botWhatsappImg from "@/assets/bot-whatsapp.jpg";
+import treinamentoCientificoImg from "@/assets/treinamento-cientifico.jpg";
 
 const Services: React.FC = () => {
   return (
@@ -76,7 +77,7 @@ const Services: React.FC = () => {
             </div>
             <div className="flex justify-center">
               <img
-                src="https://placehold.co/600x400/1E3A8A/FFF?text=Bot+WhatsApp"
+                src={botWhatsappImg}
                 alt="Bot de WhatsApp"
                 className="w-full max-w-md h-auto rounded-lg shadow-lg"
               />
@@ -91,7 +92,7 @@ const Services: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 flex justify-center">
               <img
-                src="https://placehold.co/600x400/7C3AED/FFF?text=Treinamento"
+                src={treinamentoCientificoImg}
                 alt="Treinamento Científico para Equipes"
                 className="w-full max-w-md h-auto rounded-lg shadow-lg"
               />

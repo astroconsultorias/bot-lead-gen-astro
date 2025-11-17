@@ -1,8 +1,8 @@
-
 import React from "react";
 import Layout from "@/components/layout/Layout";
 import { Badge } from "@/components/ui/badge";
 import JeanCesarSection from "@/components/about/JeanCesarSection";
+import nossaHistoriaImg from "@/assets/nossa-historia.jpg";
 
 const About: React.FC = () => {
   return (
@@ -52,7 +52,7 @@ const About: React.FC = () => {
             </div>
             <div className="flex justify-center">
               <img
-                src="https://placehold.co/600x400/1E3A8A/FFF?text=Nossa+História"
+                src={nossaHistoriaImg}
                 alt="História da Astro Consultoria"
                 className="w-full max-w-md h-auto rounded-lg shadow-lg"
               />
