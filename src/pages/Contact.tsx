@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Mail, MessageSquare, Phone } from "lucide-react";
+import { Calendar, Mail, MessageSquare, Phone, MapPin } from "lucide-react";
 import { toast } from "sonner";
 
 const Contact: React.FC = () => {
@@ -256,19 +256,32 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="mt-8 bg-white p-8 rounded-lg shadow-md">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Escritório
-                </h2>
-                <p className="text-gray-600 mb-6">
-                  R. Exemplo, 123 - Centro<br />
-                  Porto Alegre - RS, 90000-000<br />
-                  Brasil
-                </p>
-                <div className="aspect-video w-full bg-gray-200 rounded-md">
-                  {/* In a real application, you would embed a Google Maps iframe here */}
-                  <div className="w-full h-full flex items-center justify-center text-gray-500">
-                    Mapa do Google seria exibido aqui
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="p-3 bg-astro-blue/10 rounded-lg">
+                    <MapPin className="h-6 w-6 text-astro-blue" />
                   </div>
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                      Nosso Escritório
+                    </h2>
+                    <p className="text-gray-600">
+                      Travessa Ferreira de Abreu, 5<br />
+                      Porto Alegre - RS, 90040-260<br />
+                      Brasil
+                    </p>
+                  </div>
+                </div>
+                <div className="aspect-video w-full rounded-lg overflow-hidden shadow-md">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.0!2d-51.2177!3d-30.0277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951978567f17f28d%3A0x2c2c5b7f8c8c8c8c!2sTravessa%20Ferreira%20de%20Abreu%2C%205%20-%20Porto%20Alegre%2C%20RS%2C%2090040-260!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Localização da Astro Consultoria"
+                  ></iframe>
                 </div>
               </div>
             </div>
