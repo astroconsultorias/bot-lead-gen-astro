@@ -11,14 +11,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Calendar } from "@/components/ui/calendar";
 import { useForm, Controller } from "react-hook-form";
 import { Badge } from "@/components/ui/badge";
 import { Calendar as CalendarIcon, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
+import { cn } from "@/lib/utils";
 
 const Booking: React.FC = () => {
   const [step, setStep] = useState(1);
-  const [dateSelected, setDateSelected] = useState("");
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const [timeSelected, setTimeSelected] = useState("");
 
   const {
@@ -28,13 +32,12 @@ const Booking: React.FC = () => {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const availableDates = [
-    "29/04/2025",
-    "30/04/2025",
-    "01/05/2025",
-    "02/05/2025",
-    "05/05/2025",
-  ];
+  // Função para desabilitar datas passadas
+  const isPastDate = (date: Date) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return date < today;
+  };
 
   const availableTimes = [
     "09:00",
@@ -62,12 +65,17 @@ const Booking: React.FC = () => {
     window.scrollTo(0, 0);
   };
 
+  // Formatar a data selecionada para exibição
+  const formattedDate = selectedDate 
+    ? format(selectedDate, "dd 'de' MMMM 'de' yyyy", { locale: ptBR })
+    : "";
+
   const onSubmit = async (data: any) => {
     try {
       // Combine form data with selected date and time
       const bookingData = {
         ...data,
-        date: dateSelected,
+        date: selectedDate,
         time: timeSelected,
       };
       
@@ -142,32 +150,31 @@ const Booking: React.FC = () => {
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   Selecione a Data e Horário
                 </h2>
-                <div className="flex flex-col md:flex-row gap-8">
+                <div className="flex flex-col lg:flex-row gap-8">
                   <div className="flex-1">
-                    <h3 className="font-medium text-gray-900 mb-3 flex items-center">
+                    <h3 className="font-medium text-gray-900 mb-4 flex items-center">
                       <CalendarIcon className="h-4 w-4 mr-2 text-astro-blue" />
-                      Data Disponível
+                      Escolha uma data
                     </h3>
-                    <div className="grid grid-cols-1 gap-2">
-                      {availableDates.map((date, index) => (
-                        <button
-                          key={index}
-                          type="button"
-                          className={`p-3 border rounded-md text-left ${
-                            dateSelected === date
-                              ? "border-astro-blue bg-astro-blue/5"
-                              : "border-gray-200 hover:border-astro-blue/50"
-                          }`}
-                          onClick={() => setDateSelected(date)}
-                        >
-                          {date}
-                        </button>
-                      ))}
+                    <div className="border rounded-lg p-4 bg-gray-50">
+                      <Calendar
+                        mode="single"
+                        selected={selectedDate}
+                        onSelect={setSelectedDate}
+                        disabled={isPastDate}
+                        className={cn("pointer-events-auto")}
+                        locale={ptBR}
+                      />
                     </div>
+                    {selectedDate && (
+                      <p className="mt-3 text-sm text-astro-blue font-medium">
+                        Data selecionada: {formattedDate}
+                      </p>
+                    )}
                   </div>
                   
                   <div className="flex-1">
-                    <h3 className="font-medium text-gray-900 mb-3">Horário Disponível</h3>
+                    <h3 className="font-medium text-gray-900 mb-4">Horário Disponível</h3>
                     <div className="grid grid-cols-2 gap-2">
                       {availableTimes.map((time, index) => (
                         <button
@@ -177,15 +184,15 @@ const Booking: React.FC = () => {
                             timeSelected === time
                               ? "border-astro-blue bg-astro-blue/5"
                               : "border-gray-200 hover:border-astro-blue/50"
-                          } ${!dateSelected && "opacity-50 cursor-not-allowed"}`}
+                          } ${!selectedDate && "opacity-50 cursor-not-allowed"}`}
                           onClick={() => setTimeSelected(time)}
-                          disabled={!dateSelected}
+                          disabled={!selectedDate}
                         >
                           {time}
                         </button>
                       ))}
                     </div>
-                    {!dateSelected && (
+                    {!selectedDate && (
                       <p className="text-sm text-gray-500 mt-2">
                         Selecione uma data primeiro
                       </p>
@@ -193,10 +200,10 @@ const Booking: React.FC = () => {
                   </div>
                 </div>
 
-                {dateSelected && timeSelected ? (
+                {selectedDate && timeSelected ? (
                   <div className="mt-8 p-4 bg-green-50 border border-green-200 rounded-md">
                     <p className="text-green-800 font-medium">
-                      Você selecionou: {dateSelected} às {timeSelected}
+                      Você selecionou: {formattedDate} às {timeSelected}
                     </p>
                   </div>
                 ) : (
@@ -210,7 +217,7 @@ const Booking: React.FC = () => {
                 <div className="mt-8 flex justify-end">
                   <Button
                     onClick={nextStep}
-                    disabled={!dateSelected || !timeSelected}
+                    disabled={!selectedDate || !timeSelected}
                     className="bg-astro-blue hover:bg-astro-blue/90 text-white"
                   >
                     Continuar
@@ -379,7 +386,7 @@ const Booking: React.FC = () => {
                   Diagnóstico Agendado com Sucesso!
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  Reservamos seu horário para <span className="font-medium">{dateSelected} às {timeSelected}</span>. Em breve você receberá um e-mail de confirmação com os detalhes e link para a reunião online.
+                  Reservamos seu horário para <span className="font-medium">{formattedDate} às {timeSelected}</span>. Em breve você receberá um e-mail de confirmação com os detalhes e link para a reunião online.
                 </p>
                 <div className="bg-gray-50 p-6 rounded-md mb-8">
                   <h3 className="font-medium text-gray-900 mb-3">Próximos passos:</h3>
