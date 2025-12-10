@@ -1,54 +1,46 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
 
 interface TestimonialProps {
   quote: string;
   author: string;
-  position: string;
-  company: string;
-  image: string;
-  rating: number;
+  business: string;
   result: string;
 }
 
 const TestimonialCard: React.FC<TestimonialProps> = ({
   quote,
   author,
-  position,
-  company,
-  image,
-  rating,
+  business,
   result,
 }) => {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-md">
-      <div className="flex mb-4">
+    <div className="bg-card p-8 rounded-2xl shadow-soft border border-border hover-lift relative">
+      {/* Quote icon */}
+      <div className="absolute -top-4 left-8">
+        <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center shadow-gold">
+          <Quote size={20} className="text-accent-foreground" />
+        </div>
+      </div>
+
+      {/* Stars */}
+      <div className="flex mb-4 pt-4">
         {[...Array(5)].map((_, i) => (
-          <Star
-            key={i}
-            size={18}
-            className={i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}
-          />
+          <Star key={i} size={18} className="text-accent fill-accent" />
         ))}
       </div>
-      <p className="text-gray-700 italic mb-6">"{quote}"</p>
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <img
-            src={image}
-            alt={author}
-            className="w-12 h-12 rounded-full object-cover"
-          />
-          <div>
-            <p className="font-semibold text-gray-900">{author}</p>
-            <p className="text-sm text-gray-500">
-              {position}, {company}
-            </p>
-          </div>
+
+      {/* Quote */}
+      <p className="text-foreground/80 italic mb-6 text-lg leading-relaxed">"{quote}"</p>
+
+      {/* Author info */}
+      <div className="flex items-center justify-between border-t border-border pt-4">
+        <div>
+          <p className="font-semibold text-primary">{author}</p>
+          <p className="text-sm text-muted-foreground">{business}</p>
         </div>
-        <div className="bg-astro-purple/10 text-astro-purple font-medium px-4 py-1 rounded-full text-sm">
+        <div className="bg-accent/10 text-accent font-semibold px-4 py-2 rounded-full text-sm">
           {result}
         </div>
       </div>
@@ -59,36 +51,24 @@ const TestimonialCard: React.FC<TestimonialProps> = ({
 const TestimonialsSection: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const testimonials = [
+  const testimonials: TestimonialProps[] = [
     {
-      quote:
-        "Os bots implementados pela Astro revolucionaram nosso atendimento. Conseguimos atender 3x mais clientes com a mesma equipe e aumentamos nossas vendas em 32%.",
-      author: "Carlos Silva",
-      position: "Diretor Comercial",
-      company: "Tech Solutions",
-      image: "https://placehold.co/200x200/1E3A8A/FFF?text=CS",
-      rating: 5,
-      result: "+32% em vendas",
+      quote: "O Jean transformou completamente meu atendimento. Em menos de uma semana, já estava atendendo melhor e vendendo mais!",
+      author: "Maria Santos",
+      business: "Salão de Beleza",
+      result: "+45% clientes",
     },
     {
-      quote:
-        "O treinamento científico transformou nossa equipe. A metodologia é incrível e os resultados apareceram já nos primeiros 30 dias de implementação.",
-      author: "Marina Oliveira",
-      position: "Gerente de Atendimento",
-      company: "Grupo Saúde",
-      image: "https://placehold.co/200x200/7C3AED/FFF?text=MO",
-      rating: 5,
-      result: "-45% em tempo de resposta",
+      quote: "A automação humanizada fez toda a diferença. Meus clientes elogiam o atendimento e eu tenho mais tempo para focar no que importa.",
+      author: "Pedro Oliveira",
+      business: "Loja de Roupas",
+      result: "3x mais vendas",
     },
     {
-      quote:
-        "A combinação de bots inteligentes e treinamento foi o diferencial para escalarmos. O ROI foi positivo já no primeiro mês de operação.",
-      author: "Rafael Mendes",
-      position: "CEO",
-      company: "Construtech",
-      image: "https://placehold.co/200x200/F97316/FFF?text=RM",
-      rating: 5,
-      result: "ROI de 380%",
+      quote: "Finalmente encontrei alguém que entende a realidade de um pequeno negócio. O investimento se pagou no primeiro mês!",
+      author: "Ana Paula",
+      business: "Clínica Estética",
+      result: "ROI em 30 dias",
     },
   ];
 
@@ -101,20 +81,21 @@ const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-16 lg:py-24">
+    <section className="py-20 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
+        {/* Section Title */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            O Que Nossos Clientes Dizem
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-primary mb-4">
+            O Que Dizem Nossos Clientes
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Histórias reais de empresas que transformaram seu atendimento e
-            alcançaram resultados extraordinários com a Astro Consultoria.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
+            Histórias reais de pequenos negócios que transformaram seu atendimento
           </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-accent to-accent/60 mx-auto rounded-full" />
         </div>
 
         <div className="relative">
-          {/* Desktop View - Show all testimonials */}
+          {/* Desktop View */}
           <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard key={index} {...testimonial} />
@@ -129,7 +110,7 @@ const TestimonialsSection: React.FC = () => {
                 variant="outline"
                 size="icon"
                 onClick={prevSlide}
-                className="rounded-full"
+                className="rounded-full border-accent text-accent hover:bg-accent hover:text-accent-foreground"
               >
                 <ChevronLeft className="h-4 w-4" />
               </Button>
@@ -139,17 +120,17 @@ const TestimonialsSection: React.FC = () => {
                     key={index}
                     className={`h-2 rounded-full transition-all ${
                       index === currentSlide
-                        ? "w-6 bg-astro-blue"
-                        : "w-2 bg-gray-300"
+                        ? "w-6 bg-accent"
+                        : "w-2 bg-border"
                     }`}
-                  ></div>
+                  />
                 ))}
               </div>
               <Button
                 variant="outline"
                 size="icon"
                 onClick={nextSlide}
-                className="rounded-full"
+                className="rounded-full border-accent text-accent hover:bg-accent hover:text-accent-foreground"
               >
                 <ChevronRight className="h-4 w-4" />
               </Button>
