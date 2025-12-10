@@ -1,10 +1,9 @@
-
 import React from "react";
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/home/HeroSection";
-import JeanCesarSection from "@/components/about/JeanCesarSection";
+import FounderSection from "@/components/home/FounderSection";
 import MissionVisionValues from "@/components/home/MissionVisionValues";
-import SolutionsCards from "@/components/home/SolutionsCards";
+import ServicesSection from "@/components/home/ServicesSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CtaSection from "@/components/home/CtaSection";
 
@@ -13,9 +12,9 @@ const Index: React.FC = () => {
     <Layout>
       <div className="flex flex-col w-full">
         <HeroSection />
-        <JeanCesarSection />
+        <FounderSection />
         <MissionVisionValues />
-        <SolutionsCards />
+        <ServicesSection />
         <TestimonialsSection />
         <CtaSection />
       </div>

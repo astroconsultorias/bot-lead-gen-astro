@@ -1,114 +1,27 @@
 import React from "react";
 import Layout from "@/components/layout/Layout";
-import { Badge } from "@/components/ui/badge";
-import JeanCesarSection from "@/components/about/JeanCesarSection";
-import nossaHistoriaImg from "@/assets/nossa-historia.jpg";
+import FounderSection from "@/components/home/FounderSection";
+import MissionVisionValues from "@/components/home/MissionVisionValues";
 
 const About: React.FC = () => {
   return (
     <Layout>
-      <section className="pt-16 lg:pt-24 pb-16 bg-astro-light">
+      <section className="pt-24 lg:pt-32 pb-8 bg-gradient-to-b from-primary/5 to-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <Badge className="bg-astro-purple/10 text-astro-purple hover:bg-astro-purple/20 mb-4">
-              Nossa História
-            </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Sobre a Astro Consultoria
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-4">
+              Sobre a AstroAtendimento
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Conheça nossa trajetória e a equipe por trás das soluções que estão
-              transformando o atendimento via WhatsApp no Brasil.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Conheça a história e o propósito por trás da transformação de pequenos negócios.
             </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-accent to-accent/60 mx-auto rounded-full mt-6" />
           </div>
         </div>
       </section>
 
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Nossa Trajetória
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                A Astro Consultoria nasceu da experiência prática em grandes
-                corporações como Walmart e Hospital de Clínicas de Porto Alegre (HCPA),
-                onde identificamos a necessidade crítica de otimização nos processos de
-                atendimento ao cliente.
-              </p>
-              <p className="text-lg text-gray-600 mb-6">
-                Fundada por Jean Villéla, especialista em automação e com formação
-                sólida em TI e Educação Digital, a Astro combina conhecimento técnico
-                avançado com metodologias científicas de treinamento para criar soluções
-                completas e mensuráveis.
-              </p>
-              <p className="text-lg text-gray-600">
-                Hoje, ajudamos empresas de todos os portes a implementar bots inteligentes
-                de WhatsApp e treinar suas equipes com metodologias baseadas em
-                neurociência, gerando resultados concretos e transformando a maneira como
-                as empresas se comunicam com seus clientes.
-              </p>
-            </div>
-            <div className="flex justify-center">
-              <img
-                src={nossaHistoriaImg}
-                alt="História da Astro Consultoria"
-                className="w-full max-w-md h-auto rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <JeanCesarSection />
-
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Nossos Valores
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Princípios que guiam nosso trabalho e relacionamento com clientes.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-md border-t-4 border-astro-blue">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Eficiência</h3>
-              <p className="text-gray-600">
-                Buscamos continuamente otimizar processos e resultados, garantindo
-                o melhor uso de recursos e tempo.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-md border-t-4 border-astro-purple">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Inovação</h3>
-              <p className="text-gray-600">
-                Estamos sempre à frente, incorporando novas tecnologias e metodologias
-                para oferecer soluções de ponta.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-md border-t-4 border-astro-orange">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Resultados</h3>
-              <p className="text-gray-600">
-                Focamos em métricas mensuráveis e objetivos claros, garantindo ROI
-                positivo para nossos clientes.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-md border-t-4 border-green-500">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Humanização</h3>
-              <p className="text-gray-600">
-                Mesmo com automação, mantemos o atendimento humanizado e centrado
-                nas necessidades do cliente.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FounderSection />
+      <MissionVisionValues />
     </Layout>
   );
 };
