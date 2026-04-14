@@ -1,125 +1,67 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Instagram, Mail, Phone } from "lucide-react";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-astro-blue text-white">
+    <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto py-12 px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Column 1 - Logo and Info */}
-          <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <img 
-                src="/lovable-uploads/1e21dbc2-5ede-422e-b8fb-5d0c7c77f6ce.png" 
-                alt="Astro Consultoria Logo" 
-                className="h-16 w-auto"
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src="/lovable-uploads/1e21dbc2-5ede-422e-b8fb-5d0c7c77f6ce.png"
+                alt="Astro Consultoria Logo"
+                className="h-14 w-auto"
               />
             </div>
-            <p className="text-sm text-astro-light/80 mb-4">
-              Automação de atendimento via WhatsApp com bots inteligentes e treinamento científico para equipes.
+            <p className="text-primary-foreground/70 text-sm leading-relaxed">
+              Estruturação de negócios e geração de clientes para pequenas empresas.
             </p>
-            <div className="flex space-x-4">
-              <a href="https://facebook.com" aria-label="Facebook" className="text-white hover:text-astro-orange transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="https://instagram.com" aria-label="Instagram" className="text-white hover:text-astro-orange transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="https://linkedin.com" aria-label="LinkedIn" className="text-white hover:text-astro-orange transition-colors">
-                <Linkedin size={20} />
-              </a>
-            </div>
           </div>
 
-          {/* Column 2 - Quick Links */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Links Rápidos</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/" className="text-astro-light/80 hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/sobre" className="text-astro-light/80 hover:text-white transition-colors">
-                  Sobre Nós
-                </Link>
-              </li>
-              <li>
-                <Link to="/servicos" className="text-astro-light/80 hover:text-white transition-colors">
-                  Serviços
-                </Link>
-              </li>
-              <li>
-                <Link to="/precos" className="text-astro-light/80 hover:text-white transition-colors">
-                  Preços e Pacotes
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3 - Services */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Serviços</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/servicos/bots" className="text-astro-light/80 hover:text-white transition-colors">
-                  Bots de WhatsApp
-                </Link>
-              </li>
-              <li>
-                <Link to="/servicos/treinamento" className="text-astro-light/80 hover:text-white transition-colors">
-                  Treinamento Científico
-                </Link>
-              </li>
-              <li>
-                <Link to="/servicos/consultoria" className="text-astro-light/80 hover:text-white transition-colors">
-                  Consultoria de Implementação
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4 - Contact */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Contato</h3>
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-accent">Contato</h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
-                <Phone size={16} className="text-astro-orange" />
-                <span className="text-astro-light/80">(51) 99999-9999</span>
+                <Phone size={16} className="text-accent" />
+                <span className="text-primary-foreground/80">(51) 98152-0555</span>
               </li>
               <li className="flex items-center gap-2">
-                <Mail size={16} className="text-astro-orange" />
-                <span className="text-astro-light/80">contato@astroconsultoria.com.br</span>
+                <Mail size={16} className="text-accent" />
+                <span className="text-primary-foreground/80">astroconsultorias@gmail.com</span>
               </li>
-              <li className="mt-4">
-                <Link to="/agendamento" className="text-astro-orange hover:text-astro-orange/90 font-medium">
-                  Agende seu diagnóstico gratuito →
-                </Link>
+              <li className="flex items-center gap-2">
+                <Instagram size={16} className="text-accent" />
+                <a href="https://instagram.com/consultoria_astro" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  @consultoria_astro
+                </a>
               </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-accent">Links</h3>
+            <ul className="space-y-2">
+              <li><Link to="/" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">Home</Link></li>
+              <li><Link to="/sobre" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">Sobre</Link></li>
+              <li><Link to="/servicos" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">Serviços</Link></li>
+              <li><Link to="/contato" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">Contato</Link></li>
             </ul>
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-astro-blue-700">
+      <div className="border-t border-primary-foreground/10">
         <div className="container mx-auto py-6 px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-astro-light/60">
+          <p className="text-sm text-primary-foreground/50">
             &copy; {currentYear} Astro Consultoria. Todos os direitos reservados.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/politica-de-privacidade" className="text-sm text-astro-light/60 hover:text-white transition-colors">
-              Política de Privacidade
-            </Link>
-            <Link to="/termos-de-uso" className="text-sm text-astro-light/60 hover:text-white transition-colors">
-              Termos de Uso
-            </Link>
-          </div>
+          <p className="text-sm text-primary-foreground/50 mt-2 md:mt-0">
+            Crescimento não acontece no improviso. Acontece com estrutura.
+          </p>
         </div>
       </div>
     </footer>
