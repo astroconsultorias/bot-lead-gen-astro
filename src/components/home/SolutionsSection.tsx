@@ -18,6 +18,7 @@ interface Service {
   title: string;
   description: string;
   benefit: string;
+  price: string;
 }
 
 interface Category {
@@ -39,6 +40,7 @@ const categories: Category[] = [
         description:
           "Diagnóstico prático para identificar onde a empresa perde tempo, clientes, eficiência e controle na operação.",
         benefit: "Clareza para enxergar os gargalos e definir prioridades de ação.",
+        price: "A partir de R$ 600",
       },
       {
         icon: <Users className="h-6 w-6 text-accent" />,
@@ -46,6 +48,7 @@ const categories: Category[] = [
         description:
           "Estruturação da rotina de atendimento, acompanhamento comercial e fluxo de oportunidades para reduzir perdas e melhorar a conversão.",
         benefit: "Mais organização no processo comercial e menos dependência do improviso.",
+        price: "A partir de R$ 1.800",
       },
       {
         icon: <Workflow className="h-6 w-6 text-accent" />,
@@ -53,6 +56,7 @@ const categories: Category[] = [
         description:
           "Análise e desenho de processos internos para transformar atividades confusas em rotinas mais simples, claras e executáveis.",
         benefit: "Menos retrabalho, mais fluidez e melhor distribuição de responsabilidades.",
+        price: "A partir de R$ 1.500",
       },
       {
         icon: <UsersRound className="h-6 w-6 text-accent" />,
@@ -60,6 +64,7 @@ const categories: Category[] = [
         description:
           "Apoio na definição de papéis, alinhamento de rotina, acompanhamento e organização operacional de equipes.",
         benefit: "Mais clareza para a equipe e mais controle para a liderança.",
+        price: "A partir de R$ 1.500",
       },
       {
         icon: <Rocket className="h-6 w-6 text-accent" />,
@@ -67,6 +72,7 @@ const categories: Category[] = [
         description:
           "Execução prática de ajustes prioritários identificados no diagnóstico, com foco em organização, acompanhamento e resultado.",
         benefit: "A empresa sai do diagnóstico e entra na ação.",
+        price: "A partir de R$ 1.800",
       },
     ],
   },
@@ -81,6 +87,7 @@ const categories: Category[] = [
         description:
           "Criação ou organização do Perfil da Empresa no Google para melhorar apresentação, confiança e facilidade de contato.",
         benefit: "Sua empresa mais encontrável e mais bem apresentada nas buscas locais.",
+        price: "R$ 300",
       },
       {
         icon: <FileText className="h-6 w-6 text-accent" />,
@@ -88,6 +95,7 @@ const categories: Category[] = [
         description:
           "Página simples, profissional e objetiva para apresentar a empresa, os serviços e facilitar o contato por WhatsApp.",
         benefit: "Um link profissional para transmitir mais confiança e agilizar o atendimento.",
+        price: "R$ 500",
       },
       {
         icon: <LayoutGrid className="h-6 w-6 text-accent" />,
@@ -95,6 +103,7 @@ const categories: Category[] = [
         description:
           "Combinação do Perfil da Empresa no Google com uma página simples de apresentação, criando uma presença digital enxuta e eficiente.",
         benefit: "Mais visibilidade, mais confiança e mais praticidade para o cliente.",
+        price: "R$ 800",
       },
       {
         icon: <Globe className="h-6 w-6 text-accent" />,
@@ -102,6 +111,7 @@ const categories: Category[] = [
         description:
           "Organização básica da presença digital para empresas que precisam começar de forma rápida, simples e funcional.",
         benefit: "O essencial para sair da informalidade digital com mais consistência.",
+        price: "A partir de R$ 600",
       },
       {
         icon: <Sparkles className="h-6 w-6 text-accent" />,
@@ -109,6 +119,7 @@ const categories: Category[] = [
         description:
           "Melhorias em textos, organização da comunicação, clareza da oferta e apresentação digital da empresa.",
         benefit: "Uma imagem mais profissional e coerente com o valor do negócio.",
+        price: "A partir de R$ 400",
       },
     ],
   },
@@ -160,9 +171,10 @@ const SolutionsSection: React.FC = () => {
                     <h4 className="text-lg font-bold font-heading text-foreground mb-2">
                       {service.title}
                     </h4>
-                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed flex-grow">
+                    <p className="text-sm text-muted-foreground mb-3 leading-relaxed flex-grow">
                       {service.description}
                     </p>
+                    <p className="text-base font-semibold text-accent mb-4">{service.price}</p>
                     <div className="pt-4 border-t border-border">
                       <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">
                         Benefício principal
