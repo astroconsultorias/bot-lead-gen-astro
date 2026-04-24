@@ -133,7 +133,8 @@ const ServiceCard: React.FC<{ service: ServiceItem }> = ({ service }) => {
         <Icon size={24} className="text-accent" />
       </div>
       <h4 className="text-lg font-bold font-heading text-primary mb-2">{service.title}</h4>
-      <p className="text-muted-foreground text-sm mb-4 flex-grow">{service.description}</p>
+      <p className="text-muted-foreground text-sm mb-3 flex-grow">{service.description}</p>
+      <p className="text-base font-semibold text-accent mb-4">{service.price}</p>
       <div className="pt-4 border-t border-border">
         <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-1">
           Benefício principal
