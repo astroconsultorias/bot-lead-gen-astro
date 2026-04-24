@@ -41,6 +41,7 @@ const categories: Category[] = [
         description:
           "Diagnóstico prático para identificar onde a empresa perde tempo, clientes, eficiência e controle na operação.",
         benefit: "Clareza para enxergar os principais gargalos e definir prioridades de ação.",
+        price: "A partir de R$ 600",
       },
       {
         icon: Users,
@@ -48,6 +49,7 @@ const categories: Category[] = [
         description:
           "Estruturação da rotina de atendimento, acompanhamento comercial e fluxo de oportunidades para reduzir perdas e melhorar a conversão.",
         benefit: "Mais organização no processo comercial e menos dependência do improviso.",
+        price: "A partir de R$ 1.800",
       },
       {
         icon: Workflow,
@@ -55,6 +57,7 @@ const categories: Category[] = [
         description:
           "Análise e desenho de processos internos para transformar atividades confusas em rotinas mais simples, claras e executáveis.",
         benefit: "Menos retrabalho, mais fluidez e melhor distribuição de responsabilidades.",
+        price: "A partir de R$ 1.500",
       },
       {
         icon: UserCog,
@@ -62,6 +65,7 @@ const categories: Category[] = [
         description:
           "Apoio na definição de papéis, alinhamento de rotina, acompanhamento e organização operacional de equipes.",
         benefit: "Mais clareza para a equipe e mais controle para a liderança.",
+        price: "A partir de R$ 1.500",
       },
       {
         icon: Wrench,
@@ -69,6 +73,7 @@ const categories: Category[] = [
         description:
           "Execução prática de ajustes prioritários identificados no diagnóstico, com foco em organização, acompanhamento e resultado.",
         benefit: "A empresa sai do diagnóstico e entra na ação.",
+        price: "A partir de R$ 1.800",
       },
     ],
   },
@@ -82,6 +87,7 @@ const categories: Category[] = [
         description:
           "Criação ou organização do Perfil da Empresa no Google para melhorar apresentação, confiança e facilidade de contato.",
         benefit: "Sua empresa mais encontrável e mais bem apresentada nas buscas locais.",
+        price: "R$ 300",
       },
       {
         icon: Globe,
@@ -89,6 +95,7 @@ const categories: Category[] = [
         description:
           "Página simples, profissional e objetiva para apresentar a empresa, os serviços e facilitar o contato por WhatsApp.",
         benefit: "Um link profissional para transmitir mais confiança e agilizar o atendimento.",
+        price: "R$ 500",
       },
       {
         icon: Sparkles,
@@ -96,6 +103,7 @@ const categories: Category[] = [
         description:
           "Combinação do Perfil da Empresa no Google com uma página simples de apresentação, criando uma presença digital enxuta e eficiente.",
         benefit: "Mais visibilidade, mais confiança e mais praticidade para o cliente entrar em contato.",
+        price: "R$ 800",
       },
       {
         icon: Rocket,
@@ -103,6 +111,7 @@ const categories: Category[] = [
         description:
           "Organização básica da presença digital para empresas que precisam começar de forma rápida, simples e funcional.",
         benefit: "O essencial para sair da informalidade digital e começar com mais consistência.",
+        price: "A partir de R$ 600",
       },
       {
         icon: MessageSquare,
@@ -110,6 +119,7 @@ const categories: Category[] = [
         description:
           "Melhorias em textos, organização da comunicação, clareza da oferta e apresentação digital da empresa.",
         benefit: "Uma imagem mais profissional e coerente com o valor do negócio.",
+        price: "A partir de R$ 400",
       },
     ],
   },
