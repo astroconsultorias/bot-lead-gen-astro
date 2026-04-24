@@ -87,6 +87,7 @@ const categories: Category[] = [
         description:
           "Criação ou organização do Perfil da Empresa no Google para melhorar apresentação, confiança e facilidade de contato.",
         benefit: "Sua empresa mais encontrável e mais bem apresentada nas buscas locais.",
+        price: "R$ 300",
       },
       {
         icon: <FileText className="h-6 w-6 text-accent" />,
@@ -94,6 +95,7 @@ const categories: Category[] = [
         description:
           "Página simples, profissional e objetiva para apresentar a empresa, os serviços e facilitar o contato por WhatsApp.",
         benefit: "Um link profissional para transmitir mais confiança e agilizar o atendimento.",
+        price: "R$ 500",
       },
       {
         icon: <LayoutGrid className="h-6 w-6 text-accent" />,
@@ -101,6 +103,7 @@ const categories: Category[] = [
         description:
           "Combinação do Perfil da Empresa no Google com uma página simples de apresentação, criando uma presença digital enxuta e eficiente.",
         benefit: "Mais visibilidade, mais confiança e mais praticidade para o cliente.",
+        price: "R$ 800",
       },
       {
         icon: <Globe className="h-6 w-6 text-accent" />,
@@ -108,6 +111,7 @@ const categories: Category[] = [
         description:
           "Organização básica da presença digital para empresas que precisam começar de forma rápida, simples e funcional.",
         benefit: "O essencial para sair da informalidade digital com mais consistência.",
+        price: "A partir de R$ 600",
       },
       {
         icon: <Sparkles className="h-6 w-6 text-accent" />,
@@ -115,6 +119,7 @@ const categories: Category[] = [
         description:
           "Melhorias em textos, organização da comunicação, clareza da oferta e apresentação digital da empresa.",
         benefit: "Uma imagem mais profissional e coerente com o valor do negócio.",
+        price: "A partir de R$ 400",
       },
     ],
   },
