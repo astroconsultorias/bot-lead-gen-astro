@@ -18,6 +18,7 @@ interface Service {
   title: string;
   description: string;
   benefit: string;
+  price: string;
 }
 
 interface Category {
