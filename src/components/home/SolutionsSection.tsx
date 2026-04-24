@@ -40,6 +40,7 @@ const categories: Category[] = [
         description:
           "Diagnóstico prático para identificar onde a empresa perde tempo, clientes, eficiência e controle na operação.",
         benefit: "Clareza para enxergar os gargalos e definir prioridades de ação.",
+        price: "A partir de R$ 600",
       },
       {
         icon: <Users className="h-6 w-6 text-accent" />,
@@ -47,6 +48,7 @@ const categories: Category[] = [
         description:
           "Estruturação da rotina de atendimento, acompanhamento comercial e fluxo de oportunidades para reduzir perdas e melhorar a conversão.",
         benefit: "Mais organização no processo comercial e menos dependência do improviso.",
+        price: "A partir de R$ 1.800",
       },
       {
         icon: <Workflow className="h-6 w-6 text-accent" />,
@@ -54,6 +56,7 @@ const categories: Category[] = [
         description:
           "Análise e desenho de processos internos para transformar atividades confusas em rotinas mais simples, claras e executáveis.",
         benefit: "Menos retrabalho, mais fluidez e melhor distribuição de responsabilidades.",
+        price: "A partir de R$ 1.500",
       },
       {
         icon: <UsersRound className="h-6 w-6 text-accent" />,
@@ -61,6 +64,7 @@ const categories: Category[] = [
         description:
           "Apoio na definição de papéis, alinhamento de rotina, acompanhamento e organização operacional de equipes.",
         benefit: "Mais clareza para a equipe e mais controle para a liderança.",
+        price: "A partir de R$ 1.500",
       },
       {
         icon: <Rocket className="h-6 w-6 text-accent" />,
@@ -68,6 +72,7 @@ const categories: Category[] = [
         description:
           "Execução prática de ajustes prioritários identificados no diagnóstico, com foco em organização, acompanhamento e resultado.",
         benefit: "A empresa sai do diagnóstico e entra na ação.",
+        price: "A partir de R$ 1.800",
       },
     ],
   },
