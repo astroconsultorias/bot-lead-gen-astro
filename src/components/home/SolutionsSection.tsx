@@ -1,25 +1,116 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Search, Globe, Settings } from "lucide-react";
+import {
+  Search,
+  Users,
+  Workflow,
+  UsersRound,
+  Rocket,
+  MapPin,
+  FileText,
+  LayoutGrid,
+  Globe,
+  Sparkles,
+} from "lucide-react";
 
-const solutions = [
+interface Service {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  benefit: string;
+}
+
+interface Category {
+  label: string;
+  title: string;
+  subtitle: string;
+  services: Service[];
+}
+
+const categories: Category[] = [
   {
-    icon: <Search className="h-8 w-8 text-accent" />,
-    title: "Diagnóstico Estratégico",
-    description: "Analisamos sua operação, seu atendimento e sua estrutura comercial para identificar onde o negócio está perdendo eficiência, tempo e clientes.",
-    benefits: ["Visão clara dos gargalos", "Prioridades definidas", "Plano de ação inicial"],
+    label: "Categoria 1",
+    title: "Consultoria, diagnóstico e organização empresarial",
+    subtitle: "Soluções estratégicas para estruturar a operação e destravar o crescimento.",
+    services: [
+      {
+        icon: <Search className="h-6 w-6 text-accent" />,
+        title: "Raio-X de Gargalos Operacionais",
+        description:
+          "Diagnóstico prático para identificar onde a empresa perde tempo, clientes, eficiência e controle na operação.",
+        benefit: "Clareza para enxergar os gargalos e definir prioridades de ação.",
+      },
+      {
+        icon: <Users className="h-6 w-6 text-accent" />,
+        title: "Organização Comercial e Atendimento",
+        description:
+          "Estruturação da rotina de atendimento, acompanhamento comercial e fluxo de oportunidades para reduzir perdas e melhorar a conversão.",
+        benefit: "Mais organização no processo comercial e menos dependência do improviso.",
+      },
+      {
+        icon: <Workflow className="h-6 w-6 text-accent" />,
+        title: "Mapeamento de Processos",
+        description:
+          "Análise e desenho de processos internos para transformar atividades confusas em rotinas mais simples, claras e executáveis.",
+        benefit: "Menos retrabalho, mais fluidez e melhor distribuição de responsabilidades.",
+      },
+      {
+        icon: <UsersRound className="h-6 w-6 text-accent" />,
+        title: "Estruturação de Equipes e Rotinas",
+        description:
+          "Apoio na definição de papéis, alinhamento de rotina, acompanhamento e organização operacional de equipes.",
+        benefit: "Mais clareza para a equipe e mais controle para a liderança.",
+      },
+      {
+        icon: <Rocket className="h-6 w-6 text-accent" />,
+        title: "Implantação de Melhorias Operacionais",
+        description:
+          "Execução prática de ajustes prioritários identificados no diagnóstico, com foco em organização, acompanhamento e resultado.",
+        benefit: "A empresa sai do diagnóstico e entra na ação.",
+      },
+    ],
   },
   {
-    icon: <Globe className="h-8 w-8 text-accent" />,
-    title: "Landing Page / Site Estratégico",
-    description: "Criamos páginas pensadas para transformar visitas em contatos reais no WhatsApp e gerar uma presença digital mais profissional e confiável.",
-    benefits: ["Mais conversão", "Mais clareza para o cliente", "Presença digital orientada a resultado"],
-  },
-  {
-    icon: <Settings className="h-8 w-8 text-accent" />,
-    title: "Consultoria de Estruturação",
-    description: "Organizamos processos, atendimento, fluxo comercial e ferramentas para que o negócio funcione com mais controle, menos retrabalho e maior capacidade de crescimento.",
-    benefits: ["Processos definidos", "Equipe mais alinhada", "Operação mais leve e previsível"],
+    label: "Categoria 2",
+    title: "Soluções rápidas e acessíveis para presença digital",
+    subtitle: "Estrutura digital simples, profissional e funcional para quem precisa começar bem.",
+    services: [
+      {
+        icon: <MapPin className="h-6 w-6 text-accent" />,
+        title: "Google Essencial",
+        description:
+          "Criação ou organização do Perfil da Empresa no Google para melhorar apresentação, confiança e facilidade de contato.",
+        benefit: "Sua empresa mais encontrável e mais bem apresentada nas buscas locais.",
+      },
+      {
+        icon: <FileText className="h-6 w-6 text-accent" />,
+        title: "Página Expressa",
+        description:
+          "Página simples, profissional e objetiva para apresentar a empresa, os serviços e facilitar o contato por WhatsApp.",
+        benefit: "Um link profissional para transmitir mais confiança e agilizar o atendimento.",
+      },
+      {
+        icon: <LayoutGrid className="h-6 w-6 text-accent" />,
+        title: "Kit Presença Local",
+        description:
+          "Combinação do Perfil da Empresa no Google com uma página simples de apresentação, criando uma presença digital enxuta e eficiente.",
+        benefit: "Mais visibilidade, mais confiança e mais praticidade para o cliente.",
+      },
+      {
+        icon: <Globe className="h-6 w-6 text-accent" />,
+        title: "Estrutura Digital de Entrada",
+        description:
+          "Organização básica da presença digital para empresas que precisam começar de forma rápida, simples e funcional.",
+        benefit: "O essencial para sair da informalidade digital com mais consistência.",
+      },
+      {
+        icon: <Sparkles className="h-6 w-6 text-accent" />,
+        title: "Ajustes Estratégicos de Apresentação",
+        description:
+          "Melhorias em textos, organização da comunicação, clareza da oferta e apresentação digital da empresa.",
+        benefit: "Uma imagem mais profissional e coerente com o valor do negócio.",
+      },
+    ],
   },
 ];
 
@@ -27,34 +118,88 @@ const SolutionsSection: React.FC = () => {
   return (
     <section id="solucoes" className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
+        {/* Header */}
+        <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-4">
-            Nós não vendemos ferramenta. Resolvemos{" "}
-            <span className="text-accent">gargalos</span> que impedem seu negócio de crescer.
+            Serviços que transformam{" "}
+            <span className="text-accent">organização em resultado</span>
           </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Da estruturação da operação ao fortalecimento da presença digital, a Astro Consultoria
+            entrega soluções práticas para empresas que precisam crescer com mais clareza,
+            eficiência e confiança.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {solutions.map((s, i) => (
-            <div key={i} className="bg-muted/30 rounded-2xl p-8 border border-border hover-lift transition-all">
-              <div className="mb-6">{s.icon}</div>
-              <h3 className="text-xl font-bold font-heading text-foreground mb-3">{s.title}</h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">{s.description}</p>
-              <ul className="space-y-2">
-                {s.benefits.map((b, j) => (
-                  <li key={j} className="flex items-center gap-2 text-sm text-foreground">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                    {b}
-                  </li>
+        {/* Categories */}
+        <div className="space-y-16">
+          {categories.map((category, idx) => (
+            <div key={idx}>
+              {/* Category header */}
+              <div className="mb-8 max-w-3xl">
+                <span className="inline-block text-xs font-semibold tracking-wider uppercase text-accent mb-2">
+                  {category.label}
+                </span>
+                <h3 className="text-2xl md:text-3xl font-bold font-heading text-foreground mb-2">
+                  {category.title}
+                </h3>
+                <p className="text-muted-foreground">{category.subtitle}</p>
+                <div className="w-16 h-0.5 bg-accent mt-4" />
+              </div>
+
+              {/* Services grid */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {category.services.map((service, i) => (
+                  <div
+                    key={i}
+                    className="bg-muted/30 rounded-2xl p-6 border border-border hover-lift transition-all flex flex-col"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                      {service.icon}
+                    </div>
+                    <h4 className="text-lg font-bold font-heading text-foreground mb-2">
+                      {service.title}
+                    </h4>
+                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed flex-grow">
+                      {service.description}
+                    </p>
+                    <div className="pt-4 border-t border-border">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">
+                        Benefício principal
+                      </p>
+                      <p className="text-sm text-foreground leading-relaxed">{service.benefit}</p>
+                    </div>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center">
-          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-gold hover:scale-105 transition-all">
-            <a href="#diagnostico">Quero uma solução para o meu negócio</a>
+        {/* Supporting text */}
+        <div className="text-center max-w-2xl mx-auto mt-16 mb-12">
+          <p className="text-base md:text-lg text-muted-foreground italic leading-relaxed">
+            A Astro Consultoria acredita que pequenas empresas não precisam de complexidade.
+            Precisam de direção, organização e soluções que funcionem no mundo real.
+          </p>
+        </div>
+
+        {/* Final CTA */}
+        <div className="bg-muted/30 rounded-2xl p-8 md:p-12 border border-border text-center max-w-3xl mx-auto">
+          <h3 className="text-2xl md:text-3xl font-bold font-heading text-foreground mb-4">
+            Vamos encontrar a melhor solução para o seu momento?
+          </h3>
+          <p className="text-muted-foreground mb-8 leading-relaxed">
+            Se sua empresa precisa organizar a operação, melhorar o atendimento ou fortalecer sua
+            presença digital, a Astro Consultoria pode ajudar com uma solução prática e adequada à
+            sua realidade.
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-gold hover:scale-105 transition-all"
+          >
+            <a href="#diagnostico">Quero entender a melhor solução</a>
           </Button>
         </div>
       </div>
