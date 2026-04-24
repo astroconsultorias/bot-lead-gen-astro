@@ -21,6 +21,7 @@ interface ServiceItem {
   title: string;
   description: string;
   benefit: string;
+  price: string;
 }
 
 interface Category {
