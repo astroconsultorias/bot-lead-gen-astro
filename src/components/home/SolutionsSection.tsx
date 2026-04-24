@@ -171,9 +171,10 @@ const SolutionsSection: React.FC = () => {
                     <h4 className="text-lg font-bold font-heading text-foreground mb-2">
                       {service.title}
                     </h4>
-                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed flex-grow">
+                    <p className="text-sm text-muted-foreground mb-3 leading-relaxed flex-grow">
                       {service.description}
                     </p>
+                    <p className="text-base font-semibold text-accent mb-4">{service.price}</p>
                     <div className="pt-4 border-t border-border">
                       <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">
                         Benefício principal
