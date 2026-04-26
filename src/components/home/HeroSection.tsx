@@ -12,14 +12,12 @@ const HeroSection: React.FC = () => {
         <div className="absolute bottom-1/3 right-0 w-48 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
       </div>
 
-      <div className="absolute top-6 left-6 md:left-10 z-20">
-        <div className="bg-background/95 rounded-2xl p-3 md:p-4 shadow-elevated backdrop-blur-sm border border-accent/20">
-          <img
-            src="/lovable-uploads/1e21dbc2-5ede-422e-b8fb-5d0c7c77f6ce.png"
-            alt="Astro Consultoria Logo"
-            className="w-14 h-14 md:w-20 md:h-20 object-contain"
-          />
-        </div>
+      <div className="absolute top-20 left-6 md:left-10 z-20">
+        <img
+          src="/lovable-uploads/1e21dbc2-5ede-422e-b8fb-5d0c7c77f6ce.png"
+          alt="Astro Consultoria Logo"
+          className="w-14 h-14 md:w-20 md:h-20 object-contain drop-shadow-[0_0_15px_hsl(var(--accent)/0.4)]"
+        />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
