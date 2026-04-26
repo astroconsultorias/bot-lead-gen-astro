@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 w-full bg-background/90 backdrop-blur-sm z-50 shadow-sm border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-2 px-4 md:px-6">
         <Link to="/" className="flex items-center gap-2">
           <img 
