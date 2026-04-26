@@ -25,22 +25,22 @@ const Header: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="font-medium text-gray-700 hover:text-astro-blue transition-colors">
+          <Link to="/" className="font-medium text-foreground/80 hover:text-accent transition-colors">
             Home
           </Link>
-          <Link to="/sobre" className="font-medium text-gray-700 hover:text-astro-blue transition-colors">
+          <Link to="/sobre" className="font-medium text-foreground/80 hover:text-accent transition-colors">
             Sobre
           </Link>
-          <Link to="/servicos" className="font-medium text-gray-700 hover:text-astro-blue transition-colors">
+          <Link to="/servicos" className="font-medium text-foreground/80 hover:text-accent transition-colors">
             Serviços
           </Link>
-          <Link to="/precos" className="font-medium text-gray-700 hover:text-astro-blue transition-colors">
+          <Link to="/precos" className="font-medium text-foreground/80 hover:text-accent transition-colors">
             Preços
           </Link>
-          <Link to="/contato" className="font-medium text-gray-700 hover:text-astro-blue transition-colors">
+          <Link to="/contato" className="font-medium text-foreground/80 hover:text-accent transition-colors">
             Contato
           </Link>
-          <Button asChild className="bg-astro-orange hover:bg-astro-orange/90 text-gray-700">
+          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
             <Link to="/agendamento">Diagnóstico Grátis</Link>
           </Button>
           <HighContrastToggle />
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-2">
           <HighContrastToggle />
-          <button className="text-gray-700" onClick={toggleMobileMenu} aria-label="Abrir menu">
+          <button className="text-foreground" onClick={toggleMobileMenu} aria-label="Abrir menu">
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
