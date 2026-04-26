@@ -48,7 +48,7 @@ const HeroSection: React.FC = () => {
               size="lg"
               asChild
               variant="outline"
-              className="border-2 border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20 font-semibold backdrop-blur-sm"
+              className="border-2 border-foreground/30 bg-foreground/5 text-foreground hover:bg-foreground/10 font-semibold backdrop-blur-sm"
             >
               <a
                 href="https://wa.me/5551981520555?text=Olá,%20quero%20saber%20mais%20sobre%20a%20Astro%20Consultoria!"
