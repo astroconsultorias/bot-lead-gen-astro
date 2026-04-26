@@ -28,6 +28,10 @@ export default {
           blue: "#0E3A59",
           gold: "#D1A24C",
           white: "#FFFFFF",
+          dark: "#0A0712",
+          purple: "#6B4FBB",
+          lilac: "#A98BE8",
+          cyan: "#C9F0FF",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",
