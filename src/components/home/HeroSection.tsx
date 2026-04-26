@@ -4,7 +4,7 @@ import { MessageCircle, ArrowRight } from "lucide-react";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-primary via-primary to-primary/90">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-background via-secondary to-background">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
@@ -12,24 +12,22 @@ const HeroSection: React.FC = () => {
         <div className="absolute bottom-1/3 right-0 w-48 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
       </div>
 
-      <div className="absolute top-6 left-6 md:left-10 z-20">
-        <div className="bg-background/95 rounded-2xl p-3 md:p-4 shadow-elevated backdrop-blur-sm border border-accent/20">
-          <img
-            src="/lovable-uploads/1e21dbc2-5ede-422e-b8fb-5d0c7c77f6ce.png"
-            alt="Astro Consultoria Logo"
-            className="w-14 h-14 md:w-20 md:h-20 object-contain"
-          />
-        </div>
+      <div className="absolute top-20 left-6 md:left-10 z-20">
+        <img
+          src="/lovable-uploads/1e21dbc2-5ede-422e-b8fb-5d0c7c77f6ce.png"
+          alt="Astro Consultoria Logo"
+          className="w-14 h-14 md:w-20 md:h-20 object-contain drop-shadow-[0_0_15px_hsl(var(--accent)/0.4)]"
+        />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-3xl mx-auto text-center text-primary-foreground space-y-8 animate-fade-in-up">
+        <div className="max-w-3xl mx-auto text-center text-foreground space-y-8 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight">
             Seu negócio não precisa de mais clientes. Precisa de{" "}
             <span className="text-accent">estrutura para converter.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
             A Astro Consultoria organiza atendimento, operação e presença digital para transformar interesse em cliente, reduzir o caos e criar crescimento com mais controle.
           </p>
 
@@ -48,7 +46,7 @@ const HeroSection: React.FC = () => {
               size="lg"
               asChild
               variant="outline"
-              className="border-2 border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20 font-semibold backdrop-blur-sm"
+              className="border-2 border-foreground/30 bg-foreground/5 text-foreground hover:bg-foreground/10 font-semibold backdrop-blur-sm"
             >
               <a
                 href="https://wa.me/5551981520555?text=Olá,%20quero%20saber%20mais%20sobre%20a%20Astro%20Consultoria!"

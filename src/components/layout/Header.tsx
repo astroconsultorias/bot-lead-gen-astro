@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 w-full bg-background/90 backdrop-blur-sm z-50 shadow-sm border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-2 px-4 md:px-6">
         <Link to="/" className="flex items-center gap-2">
           <img 
@@ -25,22 +25,22 @@ const Header: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="font-medium text-gray-700 hover:text-astro-blue transition-colors">
+          <Link to="/" className="font-medium text-foreground/80 hover:text-accent transition-colors">
             Home
           </Link>
-          <Link to="/sobre" className="font-medium text-gray-700 hover:text-astro-blue transition-colors">
+          <Link to="/sobre" className="font-medium text-foreground/80 hover:text-accent transition-colors">
             Sobre
           </Link>
-          <Link to="/servicos" className="font-medium text-gray-700 hover:text-astro-blue transition-colors">
+          <Link to="/servicos" className="font-medium text-foreground/80 hover:text-accent transition-colors">
             Serviços
           </Link>
-          <Link to="/precos" className="font-medium text-gray-700 hover:text-astro-blue transition-colors">
+          <Link to="/precos" className="font-medium text-foreground/80 hover:text-accent transition-colors">
             Preços
           </Link>
-          <Link to="/contato" className="font-medium text-gray-700 hover:text-astro-blue transition-colors">
+          <Link to="/contato" className="font-medium text-foreground/80 hover:text-accent transition-colors">
             Contato
           </Link>
-          <Button asChild className="bg-astro-orange hover:bg-astro-orange/90 text-gray-700">
+          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
             <Link to="/agendamento">Diagnóstico Grátis</Link>
           </Button>
           <HighContrastToggle />
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-2">
           <HighContrastToggle />
-          <button className="text-gray-700" onClick={toggleMobileMenu} aria-label="Abrir menu">
+          <button className="text-foreground" onClick={toggleMobileMenu} aria-label="Abrir menu">
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -57,24 +57,24 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
+        <div className="md:hidden bg-background border-t border-border">
           <div className="container mx-auto py-4 px-6 flex flex-col space-y-4">
-            <Link to="/" className="font-medium text-gray-700 hover:text-astro-blue transition-colors py-2" onClick={toggleMobileMenu}>
+            <Link to="/" className="font-medium text-foreground/80 hover:text-accent transition-colors py-2" onClick={toggleMobileMenu}>
               Home
             </Link>
-            <Link to="/sobre" className="font-medium text-gray-700 hover:text-astro-blue transition-colors py-2" onClick={toggleMobileMenu}>
+            <Link to="/sobre" className="font-medium text-foreground/80 hover:text-accent transition-colors py-2" onClick={toggleMobileMenu}>
               Sobre
             </Link>
-            <Link to="/servicos" className="font-medium text-gray-700 hover:text-astro-blue transition-colors py-2" onClick={toggleMobileMenu}>
+            <Link to="/servicos" className="font-medium text-foreground/80 hover:text-accent transition-colors py-2" onClick={toggleMobileMenu}>
               Serviços
             </Link>
-            <Link to="/precos" className="font-medium text-gray-700 hover:text-astro-blue transition-colors py-2" onClick={toggleMobileMenu}>
+            <Link to="/precos" className="font-medium text-foreground/80 hover:text-accent transition-colors py-2" onClick={toggleMobileMenu}>
               Preços
             </Link>
-            <Link to="/contato" className="font-medium text-gray-700 hover:text-astro-blue transition-colors py-2" onClick={toggleMobileMenu}>
+            <Link to="/contato" className="font-medium text-foreground/80 hover:text-accent transition-colors py-2" onClick={toggleMobileMenu}>
               Contato
             </Link>
-            <Button asChild className="bg-astro-orange hover:bg-astro-orange/90 text-gray-700 w-full">
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground w-full">
               <Link to="/agendamento" onClick={toggleMobileMenu}>Diagnóstico Grátis</Link>
             </Button>
           </div>
