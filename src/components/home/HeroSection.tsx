@@ -23,13 +23,13 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-3xl mx-auto text-center text-primary-foreground space-y-8 animate-fade-in-up">
+        <div className="max-w-3xl mx-auto text-center text-foreground space-y-8 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight">
             Seu negócio não precisa de mais clientes. Precisa de{" "}
             <span className="text-accent">estrutura para converter.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
             A Astro Consultoria organiza atendimento, operação e presença digital para transformar interesse em cliente, reduzir o caos e criar crescimento com mais controle.
           </p>
 
