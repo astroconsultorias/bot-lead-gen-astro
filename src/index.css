@@ -97,6 +97,64 @@
     --sidebar-border: 260 30% 16%;
     --sidebar-ring: 270 80% 72%;
   }
+
+  /* Modo de alto contraste — preto puro + amarelo/branco para acessibilidade */
+  .high-contrast {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 54 100% 62%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 92%;
+
+    --accent: 54 100% 62%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 100% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 100%;
+    --input: 0 0% 20%;
+    --ring: 54 100% 62%;
+
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 54 100% 62%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 100%;
+    --sidebar-ring: 54 100% 62%;
+
+    --gradient-gold: linear-gradient(135deg, hsl(54 100% 62%) 0%, hsl(54 100% 75%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 8%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 0% / 1) 0%, hsl(0 0% 5% / 1) 100%);
+
+    --shadow-soft: 0 0 0 2px hsl(0 0% 100% / 0.4);
+    --shadow-gold: 0 0 0 2px hsl(54 100% 62% / 0.8);
+    --shadow-elevated: 0 0 0 3px hsl(0 0% 100% / 0.5);
+  }
+
+  .high-contrast * {
+    text-shadow: none !important;
+  }
+
+  .high-contrast a:focus-visible,
+  .high-contrast button:focus-visible {
+    outline: 3px solid hsl(54 100% 62%);
+    outline-offset: 2px;
+  }
 }
 
 @layer base {

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import HighContrastToggle from "@/components/HighContrastToggle";
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -42,12 +43,16 @@ const Header: React.FC = () => {
           <Button asChild className="bg-astro-orange hover:bg-astro-orange/90 text-gray-700">
             <Link to="/agendamento">Diagnóstico Grátis</Link>
           </Button>
+          <HighContrastToggle />
         </nav>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-gray-700" onClick={toggleMobileMenu}>
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <HighContrastToggle />
+          <button className="text-gray-700" onClick={toggleMobileMenu} aria-label="Abrir menu">
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
