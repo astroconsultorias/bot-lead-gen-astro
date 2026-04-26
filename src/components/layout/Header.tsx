@@ -57,24 +57,24 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
+        <div className="md:hidden bg-background border-t border-border">
           <div className="container mx-auto py-4 px-6 flex flex-col space-y-4">
-            <Link to="/" className="font-medium text-gray-700 hover:text-astro-blue transition-colors py-2" onClick={toggleMobileMenu}>
+            <Link to="/" className="font-medium text-foreground/80 hover:text-accent transition-colors py-2" onClick={toggleMobileMenu}>
               Home
             </Link>
-            <Link to="/sobre" className="font-medium text-gray-700 hover:text-astro-blue transition-colors py-2" onClick={toggleMobileMenu}>
+            <Link to="/sobre" className="font-medium text-foreground/80 hover:text-accent transition-colors py-2" onClick={toggleMobileMenu}>
               Sobre
             </Link>
-            <Link to="/servicos" className="font-medium text-gray-700 hover:text-astro-blue transition-colors py-2" onClick={toggleMobileMenu}>
+            <Link to="/servicos" className="font-medium text-foreground/80 hover:text-accent transition-colors py-2" onClick={toggleMobileMenu}>
               Serviços
             </Link>
-            <Link to="/precos" className="font-medium text-gray-700 hover:text-astro-blue transition-colors py-2" onClick={toggleMobileMenu}>
+            <Link to="/precos" className="font-medium text-foreground/80 hover:text-accent transition-colors py-2" onClick={toggleMobileMenu}>
               Preços
             </Link>
-            <Link to="/contato" className="font-medium text-gray-700 hover:text-astro-blue transition-colors py-2" onClick={toggleMobileMenu}>
+            <Link to="/contato" className="font-medium text-foreground/80 hover:text-accent transition-colors py-2" onClick={toggleMobileMenu}>
               Contato
             </Link>
-            <Button asChild className="bg-astro-orange hover:bg-astro-orange/90 text-gray-700 w-full">
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground w-full">
               <Link to="/agendamento" onClick={toggleMobileMenu}>Diagnóstico Grátis</Link>
             </Button>
           </div>
