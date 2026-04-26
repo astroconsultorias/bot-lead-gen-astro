@@ -17,7 +17,7 @@
 
     /* Lilás/roxo médio como primário */
     --primary: 265 70% 65%;
-    --primary-foreground: 250 20% 6%;
+    --primary-foreground: 0 0% 100%;
 
     /* Roxo escuro como secundário */
     --secondary: 260 35% 18%;
