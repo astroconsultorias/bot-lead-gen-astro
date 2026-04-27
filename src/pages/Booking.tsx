@@ -180,10 +180,10 @@ const Booking: React.FC = () => {
                         <button
                           key={index}
                           type="button"
-                          className={`p-3 border rounded-md text-center ${
+                          className={`p-3 border rounded-md text-center font-medium transition-colors ${
                             timeSelected === time
-                              ? "border-astro-blue bg-astro-blue/5"
-                              : "border-gray-200 hover:border-astro-blue/50"
+                              ? "border-accent bg-accent text-accent-foreground"
+                              : "border-border bg-card text-foreground hover:border-accent hover:bg-accent/10"
                           } ${!selectedDate && "opacity-50 cursor-not-allowed"}`}
                           onClick={() => setTimeSelected(time)}
                           disabled={!selectedDate}
