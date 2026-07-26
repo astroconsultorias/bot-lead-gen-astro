@@ -1,51 +1,82 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { AlertTriangle, Clock, Users, Eye, Smartphone, UserCog } from "lucide-react";
+import {
+  MessageSquareOff,
+  ClipboardX,
+  Workflow,
+  Globe,
+  UserCog,
+  Cpu,
+} from "lucide-react";
 
 const painPoints = [
-  { icon: <AlertTriangle className="h-5 w-5 text-accent" />, text: "Atendimento desorganizado" },
-  { icon: <Clock className="h-5 w-5 text-accent" />, text: "Falta de processo" },
-  { icon: <Users className="h-5 w-5 text-accent" />, text: "Clientes que entram em contato e não avançam" },
-  { icon: <Eye className="h-5 w-5 text-accent" />, text: "Ausência de controle sobre o que está acontecendo" },
-  { icon: <Smartphone className="h-5 w-5 text-accent" />, text: "Presença digital que não ajuda a vender" },
-  { icon: <UserCog className="h-5 w-5 text-accent" />, text: "Dependência excessiva do dono para tudo funcionar" },
+  {
+    icon: <MessageSquareOff className="h-6 w-6 text-accent" />,
+    title: "Clientes sem resposta",
+    desc: "Mensagens chegam pelo WhatsApp, Instagram ou Google, mas demoram para ser respondidas ou acabam esquecidas.",
+  },
+  {
+    icon: <ClipboardX className="h-6 w-6 text-accent" />,
+    title: "Vendas sem acompanhamento",
+    desc: "A empresa conversa com interessados, envia propostas e orçamentos, mas não possui um processo consistente de retorno.",
+  },
+  {
+    icon: <Workflow className="h-6 w-6 text-accent" />,
+    title: "Processos desorganizados",
+    desc: "As tarefas dependem da memória das pessoas, gerando atrasos, retrabalho e falhas.",
+  },
+  {
+    icon: <Globe className="h-6 w-6 text-accent" />,
+    title: "Presença digital fraca",
+    desc: "A empresa existe e entrega um bom serviço, mas não transmite confiança ou não é facilmente encontrada na internet.",
+  },
+  {
+    icon: <UserCog className="h-6 w-6 text-accent" />,
+    title: "Dono sobrecarregado",
+    desc: "O proprietário concentra atendimento, decisões e tarefas operacionais, dificultando o crescimento.",
+  },
+  {
+    icon: <Cpu className="h-6 w-6 text-accent" />,
+    title: "Tecnologia mal aproveitada",
+    desc: "A empresa possui ferramentas, mas elas não estão integradas à rotina e não resolvem os problemas principais.",
+  },
 ];
 
 const PainSection: React.FC = () => {
   return (
-    <section className="py-20 lg:py-28 bg-background">
+    <section id="problemas" className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-12">
+        <div className="max-w-3xl mx-auto text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-6">
-            O problema não é falta de esforço.{" "}
-            <span className="text-accent">É falta de estrutura.</span>
+            Sua empresa pode estar perdendo oportunidades{" "}
+            <span className="text-accent">sem perceber</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Muitos pequenos negócios trabalham muito, atendem o dia inteiro, respondem mensagens, correm atrás de clientes e, mesmo assim, continuam sem crescer como poderiam.
-          </p>
-          <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-            O que trava o crescimento quase nunca é a qualidade do serviço. Na maioria das vezes, o problema está em outro lugar:
+            Muitos pequenos negócios possuem bons produtos e profissionais competentes, mas enfrentam dificuldades porque o atendimento, os processos e os canais digitais não funcionam de forma integrada.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto mb-10">
           {painPoints.map((point, i) => (
-            <div key={i} className="flex items-center gap-3 bg-muted/50 p-4 rounded-xl border border-border hover-lift">
-              {point.icon}
-              <span className="text-foreground font-medium text-sm">{point.text}</span>
+            <div
+              key={i}
+              className="bg-muted/40 p-6 rounded-2xl border border-border hover-lift"
+            >
+              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                {point.icon}
+              </div>
+              <h3 className="text-lg font-bold font-heading text-foreground mb-2">
+                {point.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {point.desc}
+              </p>
             </div>
           ))}
         </div>
 
-        <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Quando isso acontece, o negócio perde tempo, perde eficiência e perde clientes sem perceber.
+        <p className="text-center text-foreground/80 font-medium max-w-2xl mx-auto">
+          A Astro analisa o cenário completo antes de recomendar qualquer solução.
         </p>
-
-        <div className="text-center">
-          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-gold hover:scale-105 transition-all">
-            <a href="#diagnostico">Quero entender onde estou perdendo clientes</a>
-          </Button>
-        </div>
       </div>
     </section>
   );
