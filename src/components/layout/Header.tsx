@@ -19,10 +19,8 @@ const navItems: NavItem[] = [
   { label: "Início", href: "/#top" },
   { label: "Diagnóstico", href: "/#diagnostico" },
   { label: "Soluções", href: "/#solucoes" },
-  { label: "Método ASTRO", href: "/#metodo" },
-  { label: "Como Funciona", href: "/#como-funciona" },
+  { label: "Método", href: "/#metodo" },
   { label: "Sobre", href: "/#sobre" },
-  { label: "FAQ", href: "/#faq" },
   { label: "Contato", href: "/#contato" },
 ];
 
@@ -32,11 +30,11 @@ const Header: React.FC = () => {
   const closeMenu = () => setMobileMenuOpen(false);
 
   const renderLink = (item: NavItem, onClick?: () => void) => {
-    // Use hash links only when on the homepage; otherwise route to /#anchor
     const href =
       location.pathname === "/" && item.href.startsWith("/#")
         ? item.href.replace("/", "")
         : item.href;
+
     return (
       <a
         key={item.href}
@@ -50,7 +48,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 w-full bg-background/90 backdrop-blur-sm z-50 shadow-sm border-b border-border">
+    <header className="fixed top-0 left-0 right-0 w-full bg-background/90 backdrop-blur-md z-50 shadow-sm border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-2 px-4 md:px-6">
         <Link to="/" className="flex items-center gap-2" aria-label="Astro Consultoria — início">
           <img
@@ -60,8 +58,7 @@ const Header: React.FC = () => {
           />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-5">
+        <nav className="hidden lg:flex items-center gap-6" aria-label="Navegação principal">
           {navItems.map((item) => renderLink(item))}
           <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
             <a
@@ -76,32 +73,28 @@ const Header: React.FC = () => {
           <HighContrastToggle />
         </nav>
 
-        {/* Mobile Menu Button */}
         <div className="lg:hidden flex items-center gap-2">
           <HighContrastToggle />
           <button
-            className="text-foreground"
+            className="text-foreground p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-background border-t border-border">
-          <nav className="container mx-auto py-4 px-6 flex flex-col space-y-3">
+        <div className="lg:hidden bg-background border-t border-border shadow-lg">
+          <nav className="container mx-auto py-4 px-6 flex flex-col space-y-4" aria-label="Navegação móvel">
             {navItems.map((item) => (
               <React.Fragment key={item.href}>
                 {renderLink(item, closeMenu)}
               </React.Fragment>
             ))}
-            <Button
-              asChild
-              className="bg-accent hover:bg-accent/90 text-accent-foreground w-full mt-2"
-            >
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground w-full mt-2">
               <a
                 href={WA_DIAG}
                 target="_blank"

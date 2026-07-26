@@ -6,7 +6,6 @@ import DiagnosticSection from "@/components/home/DiagnosticSection";
 import SolutionsSection from "@/components/home/SolutionsSection";
 import TargetAudienceSection from "@/components/home/TargetAudienceSection";
 import ProcessSection from "@/components/home/ProcessSection";
-import CasesSection from "@/components/home/CasesSection";
 import DifferentialsSection from "@/components/home/DifferentialsSection";
 import ResultsSection from "@/components/home/ResultsSection";
 import FAQSection from "@/components/home/FAQSection";
@@ -22,7 +21,6 @@ const Index: React.FC = () => {
         <SolutionsSection />
         <TargetAudienceSection />
         <ProcessSection />
-        <CasesSection />
         <DifferentialsSection />
         <ResultsSection />
         <FAQSection />
