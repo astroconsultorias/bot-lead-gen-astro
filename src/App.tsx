@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,9 +9,10 @@ import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import Booking from "./pages/Booking";
-import Bookings from "./pages/Bookings"; // Nova página de agendamento
+import Bookings from "./pages/Bookings";
 import Login from "./pages/Login";
 import OAuthConsent from "./pages/OAuthConsent";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,8 +32,8 @@ const App = () => (
           <Route path="/agendamento" element={<Booking />} />
           <Route path="/agenda" element={<Bookings />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
           <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
