@@ -1,41 +1,64 @@
 import React from "react";
-import { Eye, Wrench, Heart, Layers, Users } from "lucide-react";
+import { Eye, Search, MessageSquare, Wrench, Store, Cpu } from "lucide-react";
 
 const diffs = [
-  { icon: <Eye className="h-5 w-5 text-accent" />, text: "Visão estratégica e operacional" },
-  { icon: <Wrench className="h-5 w-5 text-accent" />, text: "Foco em implementação, não só análise" },
-  { icon: <Heart className="h-5 w-5 text-accent" />, text: "Soluções adaptadas à realidade do pequeno negócio" },
-  { icon: <Layers className="h-5 w-5 text-accent" />, text: "Integração entre atendimento, processo e presença digital" },
-  { icon: <Users className="h-5 w-5 text-accent" />, text: "Atendimento próximo, humano e consultivo" },
+  {
+    icon: <Eye className="h-6 w-6 text-accent" />,
+    title: "Visão prática",
+    desc: "As recomendações consideram a realidade, a equipe e a capacidade da empresa.",
+  },
+  {
+    icon: <Search className="h-6 w-6 text-accent" />,
+    title: "Diagnóstico antes da solução",
+    desc: "Primeiro identificamos o problema. Depois escolhemos processos e ferramentas.",
+  },
+  {
+    icon: <MessageSquare className="h-6 w-6 text-accent" />,
+    title: "Linguagem simples",
+    desc: "Explicamos sem complicação e sem excesso de termos técnicos.",
+  },
+  {
+    icon: <Wrench className="h-6 w-6 text-accent" />,
+    title: "Implantação orientada",
+    desc: "A Astro pode participar da execução e não apenas entregar um relatório.",
+  },
+  {
+    icon: <Store className="h-6 w-6 text-accent" />,
+    title: "Foco em pequenos negócios",
+    desc: "As soluções são pensadas para empresas que precisam de organização sem estruturas caras ou complexas.",
+  },
+  {
+    icon: <Cpu className="h-6 w-6 text-accent" />,
+    title: "Tecnologia com propósito",
+    desc: "Usamos tecnologia e inteligência artificial quando elas realmente melhoram o processo.",
+  },
 ];
 
 const DifferentialsSection: React.FC = () => {
   return (
-    <section className="py-20 lg:py-28 bg-primary text-primary-foreground">
+    <section id="diferenciais" className="py-20 lg:py-28 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6 text-center">
-            Por que a Astro é <span className="text-accent">diferente</span>
+        <div className="max-w-3xl mx-auto text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+            Por que trabalhar com a <span className="text-accent">Astro</span>
           </h2>
-          <p className="text-primary-foreground/80 text-lg leading-relaxed text-center mb-4">
-            A maioria dos fornecedores vende partes do problema: um site, uma automação, um CRM, uma campanha.
-          </p>
-          <p className="text-primary-foreground/80 text-lg leading-relaxed text-center mb-4">
-            <strong className="text-primary-foreground">A Astro faz diferente.</strong> Nós olhamos o negócio como sistema. Não adianta criar uma landing page se o atendimento continua bagunçado. Não adianta organizar o processo se o cliente não entende seu valor.
-          </p>
+        </div>
 
-          <div className="mt-10 space-y-4">
-            {diffs.map((d, i) => (
-              <div key={i} className="flex items-center gap-4 bg-primary-foreground/10 backdrop-blur-sm p-4 rounded-xl border border-primary-foreground/10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+          {diffs.map((d, i) => (
+            <div
+              key={i}
+              className="bg-primary-foreground/10 backdrop-blur-sm p-6 rounded-2xl border border-primary-foreground/10 hover:bg-primary-foreground/15 transition-colors"
+            >
+              <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mb-4">
                 {d.icon}
-                <span className="font-medium">{d.text}</span>
               </div>
-            ))}
-          </div>
-
-          <p className="text-center text-primary-foreground/80 mt-10 text-lg">
-            Nosso trabalho é estruturar o negócio para crescer com mais lógica, mais clareza e menos caos.
-          </p>
+              <h3 className="text-lg font-bold font-heading mb-2">{d.title}</h3>
+              <p className="text-primary-foreground/80 text-sm leading-relaxed">
+                {d.desc}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,6 +1,12 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
+const WA_HERO =
+  "https://wa.me/5551981520555?text=" +
+  encodeURIComponent(
+    "Olá, conheci a Astro pelo site e gostaria de solicitar um diagnóstico para minha empresa."
+  );
 
 const HeroSection: React.FC = () => {
   return (
@@ -15,29 +21,39 @@ const HeroSection: React.FC = () => {
       <div className="absolute top-20 left-6 md:left-10 z-20">
         <img
           src="/lovable-uploads/1e21dbc2-5ede-422e-b8fb-5d0c7c77f6ce.png"
-          alt="Astro Consultoria Logo"
+          alt="Astro Consultoria"
           className="w-14 h-14 md:w-20 md:h-20 object-contain drop-shadow-[0_0_15px_hsl(var(--accent)/0.4)]"
         />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center text-foreground space-y-8 animate-fade-in-up">
+          <span className="inline-block text-xs md:text-sm font-semibold tracking-wider uppercase text-accent border border-accent/30 rounded-full px-4 py-1.5 bg-accent/5">
+            Consultoria prática para pequenos negócios
+          </span>
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight">
-            Seu negócio não precisa de mais clientes. Precisa de{" "}
-            <span className="text-accent">estrutura para converter.</span>
+            Organizamos sua empresa para ela{" "}
+            <span className="text-accent">atender melhor, vender mais e crescer com controle.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
-            A Astro Consultoria organiza atendimento, operação e presença digital para transformar interesse em cliente, reduzir o caos e criar crescimento com mais controle.
+            A Astro identifica gargalos no atendimento, nos processos, na presença digital e na rotina comercial. Depois, transforma os problemas encontrados em um plano claro de melhoria e implantação.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
             <Button
               size="lg"
               asChild
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-6 text-lg shadow-gold hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
-              <a href="#diagnostico" className="flex items-center gap-2">
+              <a
+                href={WA_HERO}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Solicitar diagnóstico pelo WhatsApp"
+                className="flex items-center gap-2"
+              >
                 Solicitar diagnóstico
                 <ArrowRight size={20} />
               </a>
@@ -48,17 +64,15 @@ const HeroSection: React.FC = () => {
               variant="outline"
               className="border-2 border-foreground/30 bg-foreground/5 text-foreground hover:bg-foreground/10 font-semibold backdrop-blur-sm"
             >
-              <a
-                href="https://wa.me/5551981520555?text=Olá,%20quero%20saber%20mais%20sobre%20a%20Astro%20Consultoria!"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <MessageCircle size={20} />
-                Falar no WhatsApp
+              <a href="#solucoes" aria-label="Ir para as soluções">
+                Conhecer as soluções
               </a>
             </Button>
           </div>
+
+          <p className="text-sm md:text-base text-foreground/70 pt-2 max-w-xl mx-auto">
+            Atendimento consultivo, soluções práticas e tecnologia aplicada à realidade da sua empresa.
+          </p>
         </div>
       </div>
 
