@@ -7,7 +7,7 @@ import { auth, defineMcp } from "npm:@lovable.dev/mcp-js@0.24.0";
 
 // src/lib/mcp/tools/list-services.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.24.0";
-import { z } from "npm:zod@^3.23.8";
+import { z } from "npm:zod@^4";
 var services = [
   {
     category: "Consultoria, diagn\xF3stico e organiza\xE7\xE3o empresarial",
