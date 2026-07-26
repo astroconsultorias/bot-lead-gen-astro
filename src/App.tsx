@@ -11,6 +11,8 @@ import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import Booking from "./pages/Booking";
 import Bookings from "./pages/Bookings"; // Nova página de agendamento
+import Login from "./pages/Login";
+import OAuthConsent from "./pages/OAuthConsent";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +31,8 @@ const App = () => (
           <Route path="/contato" element={<Contact />} />
           <Route path="/agendamento" element={<Booking />} />
           <Route path="/agenda" element={<Bookings />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
