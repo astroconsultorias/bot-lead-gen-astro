@@ -21,8 +21,6 @@ const Contact: React.FC = () => {
     // Simulate form submission
     try {
       // In a real application, you would send this data to your backend
-      console.log("Form data:", data);
-      
       // Simulate API call delay
       await new Promise((resolve) => setTimeout(resolve, 1000));
       

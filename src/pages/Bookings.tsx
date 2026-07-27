@@ -109,9 +109,8 @@ const Bookings: React.FC = () => {
         date: selectedDate,
         time: timeSelected,
       };
-      
-      console.log("Booking data:", bookingData);
-      
+      void bookingData;
+
       // Simulate API call delay
       await new Promise((resolve) => setTimeout(resolve, 1000));
       
