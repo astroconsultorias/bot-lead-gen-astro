@@ -8,36 +8,28 @@ import {
 
 const faqs = [
   {
-    q: "A Astro atende somente empresas de Porto Alegre?",
-    a: "O atendimento é prioritariamente voltado a Porto Alegre e Região Metropolitana, mas alguns serviços e projetos podem ser realizados remotamente.",
+    q: "A Astro atende somente clínicas?",
+    a: "Não. Clínicas e consultórios são um foco comercial inicial porque concentram problemas de atendimento, agenda, equipe e processos. A Astro também atende outros negócios de serviços quando existe uma operação que precisa de mais organização e controle.",
   },
   {
-    q: "Preciso contratar uma consultoria completa?",
-    a: "Não. A Astro possui soluções pontuais e também projetos personalizados. A indicação depende do problema identificado.",
+    q: "O Diagnóstico ASTRO me obriga a contratar outro serviço?",
+    a: "Não. O Diagnóstico ASTRO custa R$ 690 e entrega a análise, o ASTRO SCORE, os principais gargalos, as prioridades e um plano de ação. A contratação de uma implantação posterior é opcional.",
   },
   {
-    q: "A Astro trabalha apenas com tecnologia?",
-    a: "Não. A tecnologia é uma ferramenta. O trabalho pode envolver atendimento, processos, gestão, organização comercial, treinamento e implantação.",
+    q: "Vocês vendem software ou automação?",
+    a: "Não como ponto de partida. A tecnologia é uma ferramenta. Primeiro identificamos o problema e organizamos o processo; depois indicamos site, Google, automação, inteligência artificial ou outra tecnologia somente quando fizer sentido.",
   },
   {
-    q: "Quando começa o prazo de entrega?",
-    a: "O prazo começa após a confirmação do pagamento e o recebimento de todas as informações, materiais e acessos necessários.",
+    q: "Quanto custa um projeto de implantação?",
+    a: "A Implantação de Atendimento custa R$ 2.800 no escopo-base e a Organização de Processos parte de R$ 3.200. Projetos de tecnologia e estruturas maiores variam conforme a complexidade e têm o valor apresentado antes do início.",
   },
   {
-    q: "Quantas alterações estão incluídas?",
-    a: "Cada serviço possui um escopo e uma quantidade de revisões definida na proposta ou contratação. Mudanças fora do escopo podem exigir novo orçamento.",
+    q: "O trabalho pode ser realizado remotamente?",
+    a: "Sim, quando o processo puder ser analisado adequadamente a distância. Quando a observação presencial for importante, a forma de atendimento é combinada antes da contratação.",
   },
   {
-    q: "A Astro garante aumento de vendas?",
-    a: "Não é possível garantir um número de vendas, pois o resultado depende de diversos fatores. A Astro se compromete com a execução do escopo contratado, a melhoria dos processos definidos e o acompanhamento dos indicadores acordados.",
-  },
-  {
-    q: "O cliente precisa saber usar tecnologia?",
-    a: "Não. As soluções são explicadas de forma simples e adaptadas à capacidade da empresa.",
-  },
-  {
-    q: "Como recebo uma proposta?",
-    a: "O primeiro passo é uma conversa inicial ou diagnóstico. Depois disso, a Astro apresenta a solução, o escopo, o prazo e o investimento.",
+    q: "A Astro garante aumento de vendas ou faturamento?",
+    a: "Não. Resultados comerciais dependem de diversos fatores. A Astro se compromete com o diagnóstico, a implantação do escopo contratado e a melhoria dos processos e controles definidos no projeto.",
   },
 ];
 

@@ -4,13 +4,13 @@ import { BriefcaseBusiness, GraduationCap, MapPin, Users } from "lucide-react";
 
 const WA_ABOUT =
   "https://wa.me/5551981520555?text=" +
-  encodeURIComponent("Olá, gostaria de falar com Jean sobre a minha empresa.");
+  encodeURIComponent("Olá, gostaria de solicitar o Diagnóstico ASTRO para minha empresa.");
 
 const credentials = [
-  { icon: <GraduationCap className="h-5 w-5" />, text: "Administrador, com pós-graduações em áreas de gestão e educação digital" },
+  { icon: <GraduationCap className="h-5 w-5" />, text: "Administrador, com formação complementar em gestão, pessoas e educação digital" },
   { icon: <Users className="h-5 w-5" />, text: "Mais de 20 anos de experiência em atendimento e relacionamento com clientes" },
-  { icon: <BriefcaseBusiness className="h-5 w-5" />, text: "Experiência prática em processos, gestão de pessoas e ambientes corporativo e hospitalar" },
-  { icon: <MapPin className="h-5 w-5" />, text: "Atuação em Porto Alegre e Região Metropolitana" },
+  { icon: <BriefcaseBusiness className="h-5 w-5" />, text: "Vivência prática em processos, gestão de pessoas e operações corporativas e hospitalares" },
+  { icon: <MapPin className="h-5 w-5" />, text: "Atuação em Porto Alegre e Região Metropolitana, com projetos remotos quando aplicável" },
 ];
 
 const ResultsSection: React.FC = () => {
@@ -35,16 +35,16 @@ const ResultsSection: React.FC = () => {
               Quem está por trás da Astro
             </span>
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-5">
-              Experiência prática para transformar{" "}
-              <span className="text-accent">confusão em processo</span>
+              Administração aplicada à{" "}
+              <span className="text-accent">operação real</span>
             </h2>
 
             <div className="space-y-4 text-muted-foreground leading-relaxed mb-7">
               <p>
-                A Astro foi criada para ajudar pequenos empresários que entregam bons serviços, mas perdem tempo, clientes e energia por falta de organização.
+                A Astro nasceu da percepção de que pequenas empresas muitas vezes não precisam de mais uma ferramenta: precisam descobrir onde a operação está falhando e organizar aquilo que já possuem.
               </p>
               <p>
-                Jean combina experiência em atendimento, administração, processos, gestão de pessoas e transformação digital para construir soluções que caibam na rotina real da empresa.
+                Jean combina experiência em atendimento, administração, processos, gestão de pessoas e tecnologia para transformar problemas do dia a dia em rotinas mais claras, mensuráveis e executáveis.
               </p>
             </div>
 
@@ -72,9 +72,9 @@ const ResultsSection: React.FC = () => {
                 href={WA_ABOUT}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Falar com Jean pelo WhatsApp"
+                aria-label="Solicitar Diagnóstico ASTRO pelo WhatsApp"
               >
-                Falar com Jean sobre minha empresa
+                Solicitar Diagnóstico ASTRO
               </a>
             </Button>
           </div>
