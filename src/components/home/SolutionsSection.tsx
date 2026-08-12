@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { MapPin, FileText, LayoutGrid, Check } from "lucide-react";
+import { MessageCircle, Workflow, Cpu, Check } from "lucide-react";
 
-interface Produto {
+interface Solucao {
   icon: React.ReactNode;
   title: string;
   price: string;
@@ -10,60 +10,56 @@ interface Produto {
   includes: string[];
   cta: string;
   waMessage: string;
-  badge?: string;
-  highlight?: boolean;
 }
 
-const produtos: Produto[] = [
+const solucoes: Solucao[] = [
   {
-    icon: <MapPin className="h-6 w-6" />,
-    title: "Google Essencial",
-    price: "R$ 300",
-    desc: "Organização e otimização das principais informações da empresa no Perfil da Empresa no Google.",
+    icon: <MessageCircle className="h-6 w-6" />,
+    title: "Implantação de Atendimento",
+    price: "R$ 2.800",
+    desc: "Estruturamos a jornada do primeiro contato ao acompanhamento para reduzir improviso e dar clareza à equipe.",
     includes: [
-      "Conferência dos dados",
-      "Categoria principal",
-      "Descrição profissional",
-      "Serviços, horários, telefone e localização",
-      "Links, fotos e informações disponíveis",
-      "Orientação para manutenção",
+      "Fluxo de atendimento e responsabilidades",
+      "WhatsApp Business, etiquetas e respostas rápidas",
+      "Scripts e padrão de comunicação",
+      "Rotina de follow-up",
+      "Indicadores básicos",
+      "Treinamento da equipe",
     ],
-    cta: "Quero melhorar meu Google",
-    waMessage: "Olá, tenho interesse no Google Essencial de R$ 300.",
+    cta: "Conversar sobre atendimento",
+    waMessage: "Olá, quero entender se a Implantação de Atendimento da Astro faz sentido para minha empresa.",
   },
   {
-    icon: <FileText className="h-6 w-6" />,
-    title: "Página Expressa",
-    price: "R$ 500",
-    desc: "Uma página profissional e objetiva para apresentar sua empresa, seus serviços e facilitar o contato pelo WhatsApp.",
+    icon: <Workflow className="h-6 w-6" />,
+    title: "Organização de Processos",
+    price: "a partir de R$ 3.200",
+    desc: "Transformamos tarefas dependentes de memória e improviso em fluxos claros, responsabilidades definidas e padrões de execução.",
     includes: [
-      "Página responsiva",
-      "Apresentação da empresa",
-      "Serviços e diferenciais",
-      "Contatos e botão de WhatsApp",
-      "Redes sociais e localização",
-      "Configuração básica de publicação",
+      "Mapeamento do processo atual",
+      "Identificação de gargalos",
+      "Desenho do fluxo futuro",
+      "Definição de responsabilidades",
+      "Procedimento operacional",
+      "Indicadores e implantação assistida",
     ],
-    cta: "Quero uma Página Expressa",
-    waMessage: "Olá, tenho interesse na Página Expressa de R$ 500.",
+    cta: "Conversar sobre processos",
+    waMessage: "Olá, quero entender se a Organização de Processos da Astro faz sentido para minha empresa.",
   },
   {
-    icon: <LayoutGrid className="h-6 w-6" />,
-    title: "Kit Presença Local",
-    price: "R$ 800",
-    desc: "Combinação do Google Essencial com a Página Expressa para fortalecer a presença local e facilitar o contato de novos clientes.",
+    icon: <Cpu className="h-6 w-6" />,
+    title: "Tecnologia aplicada",
+    price: "projetos a partir de R$ 690",
+    desc: "Tecnologia entra quando resolve um problema identificado. Não vendemos ferramenta pela ferramenta.",
     includes: [
-      "Organização do Perfil da Empresa no Google",
-      "Página profissional",
-      "Apresentação dos serviços",
-      "Integração com WhatsApp",
-      "Informações padronizadas",
+      "Google Perfil da Empresa — R$ 690",
+      "Landing page — R$ 1.490",
+      "Site institucional — a partir de R$ 2.490",
+      "Automação e IA — a partir de R$ 2.500",
+      "Integrações adequadas ao processo",
       "Orientação para uso e manutenção",
     ],
-    cta: "Quero o Kit Presença Local",
-    waMessage: "Olá, tenho interesse no Kit Presença Local de R$ 800.",
-    badge: "Solução mais completa",
-    highlight: true,
+    cta: "Conversar sobre tecnologia",
+    waMessage: "Olá, quero conversar sobre uma solução de tecnologia aplicada para minha empresa.",
   },
 ];
 
@@ -75,47 +71,40 @@ const SolutionsSection: React.FC = () => {
     <section id="solucoes" className="py-20 lg:py-28 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-14">
+          <span className="inline-block text-xs font-semibold tracking-wider uppercase text-accent mb-3">
+            Depois do diagnóstico
+          </span>
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-4">
-            Soluções para melhorar a{" "}
-            <span className="text-accent">presença e o atendimento</span> da sua empresa
+            A solução depende do{" "}
+            <span className="text-accent">problema encontrado</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Serviços objetivos para negócios que precisam corrigir problemas específicos e melhorar rapidamente sua apresentação digital.
+            A Astro concentra a implantação em três frentes: atendimento, processos e tecnologia aplicada. O cliente não precisa adivinhar qual ferramenta comprar antes de entender a causa do problema.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {produtos.map((p, i) => (
-            <div
+          {solucoes.map((s, i) => (
+            <article
               key={i}
-              className={`relative bg-background rounded-2xl p-8 border flex flex-col ${
-                p.highlight
-                  ? "border-accent shadow-gold ring-1 ring-accent/40"
-                  : "border-border"
-              }`}
+              className="bg-background rounded-2xl p-8 border border-border flex flex-col hover-lift"
             >
-              {p.badge && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full whitespace-nowrap">
-                  {p.badge}
-                </span>
-              )}
-
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 text-accent">
-                {p.icon}
+                {s.icon}
               </div>
 
               <h3 className="text-xl font-bold font-heading text-foreground mb-2">
-                {p.title}
+                {s.title}
               </h3>
-              <p className="text-3xl font-bold text-accent font-heading mb-4">
-                {p.price}
+              <p className="text-2xl font-bold text-accent font-heading mb-4">
+                {s.price}
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                {p.desc}
+                {s.desc}
               </p>
 
               <ul className="space-y-2 mb-6 flex-grow">
-                {p.includes.map((it, j) => (
+                {s.includes.map((it, j) => (
                   <li key={j} className="flex items-start gap-2 text-sm text-foreground/80">
                     <Check className="h-4 w-4 text-accent mt-0.5 shrink-0" />
                     <span>{it}</span>
@@ -125,19 +114,26 @@ const SolutionsSection: React.FC = () => {
 
               <Button
                 asChild
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full"
+                variant="outline"
+                className="border-accent/50 hover:bg-accent/10 font-semibold w-full"
               >
                 <a
-                  href={waLink(p.waMessage)}
+                  href={waLink(s.waMessage)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`${p.cta} pelo WhatsApp`}
+                  aria-label={`${s.cta} pelo WhatsApp`}
                 >
-                  {p.cta}
+                  {s.cta}
                 </a>
               </Button>
-            </div>
+            </article>
           ))}
+        </div>
+
+        <div className="max-w-4xl mx-auto mt-8 text-center rounded-2xl border border-accent/20 bg-accent/5 p-5">
+          <p className="text-sm text-foreground/80">
+            Após um diagnóstico ou projeto de implantação, a empresa também pode contratar a <strong>Consultoria Contínua ASTRO por R$ 1.490/mês</strong>, conforme escopo definido.
+          </p>
         </div>
       </div>
     </section>
