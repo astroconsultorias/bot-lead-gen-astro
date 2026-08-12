@@ -7,7 +7,7 @@ import HighContrastToggle from "@/components/HighContrastToggle";
 const WA_DIAG =
   "https://wa.me/5551981520555?text=" +
   encodeURIComponent(
-    "Olá, conheci a Astro pelo site e gostaria de entender como vocês podem ajudar minha empresa."
+    "Olá, conheci a Astro pelo site e gostaria de solicitar o Diagnóstico ASTRO para minha empresa."
   );
 
 interface NavItem {
@@ -19,7 +19,7 @@ const navItems: NavItem[] = [
   { label: "Início", href: "/#top" },
   { label: "Diagnóstico", href: "/#diagnostico" },
   { label: "Soluções", href: "/#solucoes" },
-  { label: "Método", href: "/#metodo" },
+  { label: "Como trabalhamos", href: "/#metodo" },
   { label: "Sobre", href: "/#sobre" },
   { label: "Contato", href: "/#contato" },
 ];
@@ -65,9 +65,9 @@ const Header: React.FC = () => {
               href={WA_DIAG}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Solicitar diagnóstico pelo WhatsApp"
+              aria-label="Solicitar Diagnóstico ASTRO pelo WhatsApp"
             >
-              Solicitar diagnóstico
+              Diagnóstico ASTRO
             </a>
           </Button>
           <HighContrastToggle />
@@ -100,9 +100,9 @@ const Header: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMenu}
-                aria-label="Solicitar diagnóstico pelo WhatsApp"
+                aria-label="Solicitar Diagnóstico ASTRO pelo WhatsApp"
               >
-                Solicitar diagnóstico
+                Diagnóstico ASTRO
               </a>
             </Button>
           </nav>
