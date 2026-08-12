@@ -1,53 +1,28 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Workflow, Briefcase, Cpu } from "lucide-react";
+import { MessageCircle, Briefcase, Users } from "lucide-react";
 
-const WA_CONSULTORIA =
+const WA_DIAGNOSTICO =
   "https://wa.me/5551981520555?text=" +
   encodeURIComponent(
-    "Olá, gostaria de conversar sobre um projeto consultivo para minha empresa."
+    "Olá, quero entender se o Diagnóstico ASTRO faz sentido para minha empresa."
   );
 
-const areas = [
+const perfis = [
   {
     icon: <MessageCircle className="h-6 w-6 text-accent" />,
-    title: "Atendimento",
-    items: [
-      "Organização dos canais",
-      "Padrões de resposta",
-      "Fluxo de atendimento e triagem",
-      "Acompanhamento e experiência do cliente",
-    ],
-  },
-  {
-    icon: <Workflow className="h-6 w-6 text-accent" />,
-    title: "Processos",
-    items: [
-      "Mapeamento de rotinas",
-      "Identificação de gargalos",
-      "Redução de retrabalho",
-      "Definição de responsabilidades e procedimentos",
-    ],
+    title: "Clínicas e consultórios",
+    text: "Negócios em que agenda, recepção, WhatsApp, retornos e comunicação entre equipe precisam funcionar como um sistema.",
   },
   {
     icon: <Briefcase className="h-6 w-6 text-accent" />,
-    title: "Comercial",
-    items: [
-      "Organização do funil",
-      "Controle de leads e follow-up",
-      "Propostas e indicadores",
-      "Rotina de vendas",
-    ],
+    title: "Empresas de serviços",
+    text: "Operações que dependem de atendimento, orçamento, acompanhamento de clientes e execução coordenada entre pessoas.",
   },
   {
-    icon: <Cpu className="h-6 w-6 text-accent" />,
-    title: "Tecnologia e automação",
-    items: [
-      "WhatsApp Business e CRM",
-      "Planilhas, formulários e automações",
-      "Inteligência artificial aplicada",
-      "Integrações adequadas à realidade da empresa",
-    ],
+    icon: <Users className="h-6 w-6 text-accent" />,
+    title: "Equipes em crescimento",
+    text: "Empresas que já possuem demanda, mas começaram a sentir retrabalho, falta de padrão e dependência excessiva do gestor.",
   },
 ];
 
@@ -56,57 +31,50 @@ const TargetAudienceSection: React.FC = () => {
     <section id="consultoria" className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-14">
+          <span className="inline-block text-xs font-semibold tracking-wider uppercase text-accent mb-3">
+            Para quem a Astro faz mais sentido
+          </span>
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-4">
-            Quando o problema é maior do que{" "}
-            <span className="text-accent">uma página ou ferramenta</span>
+            Empresas que cresceram mais rápido do que{" "}
+            <span className="text-accent">seus processos</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Alguns problemas exigem uma análise mais profunda da operação. Nesses casos, a Astro desenvolve projetos consultivos personalizados.
+            Nosso foco comercial inicial são clínicas, consultórios e negócios de serviços. A Astro não atende somente esses segmentos: o ponto central é existir uma operação que precise de mais clareza, padrão e controle.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-10">
-          {areas.map((a, i) => (
-            <div
-              key={i}
-              className="bg-muted/40 p-6 rounded-2xl border border-border hover-lift"
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-10">
+          {perfis.map((p) => (
+            <article
+              key={p.title}
+              className="bg-muted/40 p-7 rounded-2xl border border-border hover-lift"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                  {a.icon}
-                </div>
-                <h3 className="text-xl font-bold font-heading text-foreground">
-                  {a.title}
-                </h3>
+              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                {p.icon}
               </div>
-              <ul className="space-y-2">
-                {a.items.map((it, j) => (
-                  <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <span className="text-accent mt-1">•</span>
-                    <span>{it}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              <h3 className="text-xl font-bold font-heading text-foreground mb-3">
+                {p.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {p.text}
+              </p>
+            </article>
           ))}
         </div>
 
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-muted-foreground italic mb-6 leading-relaxed">
-            Projetos personalizados são avaliados após diagnóstico. O prazo, o escopo e o investimento são definidos conforme a necessidade da empresa.
-          </p>
           <Button
             asChild
             size="lg"
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-gold hover:scale-105 transition-all"
           >
             <a
-              href={WA_CONSULTORIA}
+              href={WA_DIAGNOSTICO}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Conversar sobre minha empresa pelo WhatsApp"
+              aria-label="Solicitar Diagnóstico ASTRO pelo WhatsApp"
             >
-              Conversar sobre minha empresa
+              Avaliar minha empresa
             </a>
           </Button>
         </div>
