@@ -1,0 +1,361 @@
+/* Banner fotográfico inspirado na prévia aprovada */
+.astro-reference-hero {
+  min-height: calc(100svh - 5rem);
+  display: flex;
+  align-items: center;
+}
+
+.astro-reference-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(520px, 1.08fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.astro-reference-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.astro-gradient-text {
+  color: transparent;
+  background: linear-gradient(100deg, hsl(276 92% 67%), hsl(222 95% 70%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 40px rgba(138, 92, 255, 0.12);
+}
+
+.astro-primary-cta {
+  background-image: linear-gradient(105deg, #9f4cff 0%, #6738ff 52%, #4e5cff 100%);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.astro-reference-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 760px;
+}
+
+.astro-reference-benefits > div {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  min-width: 0;
+}
+
+.astro-reference-benefits span {
+  min-width: 0;
+}
+
+.astro-reference-benefits strong,
+.astro-reference-benefits small {
+  display: block;
+}
+
+.astro-reference-benefits strong {
+  color: hsl(var(--foreground));
+  font-size: .94rem;
+  line-height: 1.25;
+}
+
+.astro-reference-benefits small {
+  color: hsl(var(--muted-foreground));
+  margin-top: .2rem;
+  font-size: .78rem;
+  white-space: nowrap;
+}
+
+.astro-photo-banner {
+  position: relative;
+  min-height: 570px;
+  isolation: isolate;
+  perspective: 1200px;
+}
+
+.astro-photo-banner::before {
+  content: "";
+  position: absolute;
+  width: 88%;
+  aspect-ratio: 1;
+  left: 10%;
+  top: 4%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(115, 72, 255, .12), transparent 45%),
+    radial-gradient(circle at 42% 62%, rgba(42, 123, 255, .15), transparent 58%);
+  filter: blur(16px);
+  z-index: -3;
+  animation: astro-banner-breathe 8s ease-in-out infinite;
+}
+
+.astro-photo-orbit {
+  position: absolute;
+  border: 1px solid rgba(144, 99, 255, .55);
+  border-radius: 50%;
+  z-index: -2;
+  box-shadow: 0 0 30px rgba(104, 68, 255, .14);
+}
+
+.astro-photo-orbit-a {
+  width: 92%;
+  height: 54%;
+  left: 2%;
+  top: 28%;
+  transform: rotate(13deg);
+  animation: astro-banner-orbit-a 13s ease-in-out infinite;
+}
+
+.astro-photo-orbit-b {
+  width: 76%;
+  height: 70%;
+  right: 1%;
+  top: 13%;
+  transform: rotate(-20deg);
+  border-color: rgba(71, 154, 255, .46);
+  animation: astro-banner-orbit-b 16s ease-in-out infinite;
+}
+
+.astro-banner-photo {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(169, 126, 255, .62);
+  background: #0b1025;
+  box-shadow:
+    0 24px 60px rgba(0,0,0,.44),
+    0 0 28px rgba(102, 70, 255, .20);
+  animation: astro-banner-float 7s ease-in-out infinite;
+}
+
+.astro-banner-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(.94) contrast(1.04);
+}
+
+.astro-banner-photo-main {
+  width: 56%;
+  height: 48%;
+  top: 7%;
+  right: 4%;
+  transform: rotate(1deg);
+}
+
+.astro-banner-photo-small {
+  width: 34%;
+  height: 32%;
+  top: 31%;
+  left: 1%;
+  transform: rotate(-2deg);
+  animation-delay: -2.2s;
+}
+
+.astro-banner-photo-team {
+  width: 51%;
+  height: 37%;
+  right: 2%;
+  bottom: 8%;
+  transform: rotate(1deg);
+  animation-delay: -4.1s;
+}
+
+.astro-banner-core {
+  position: absolute;
+  width: 29%;
+  aspect-ratio: 1;
+  left: 35%;
+  top: 49%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 1rem;
+  background:
+    radial-gradient(circle at 35% 24%, rgba(93, 79, 188, .38), transparent 36%),
+    linear-gradient(150deg, rgba(8,12,33,.97), rgba(4,8,24,.98));
+  border: 2px solid rgba(157, 83, 255, .86);
+  box-shadow:
+    0 0 0 1px rgba(60, 166, 255, .28) inset,
+    0 0 42px rgba(125, 72, 255, .42),
+    0 0 72px rgba(42, 134, 255, .18);
+  z-index: 5;
+  animation: astro-banner-core-pulse 6s ease-in-out infinite;
+}
+
+.astro-banner-core strong {
+  font-size: clamp(1.1rem, 2vw, 1.55rem);
+  letter-spacing: .18em;
+  line-height: 1;
+}
+
+.astro-banner-core small {
+  margin-top: .28rem;
+  font-size: .48rem;
+  letter-spacing: .42em;
+  opacity: .88;
+}
+
+.astro-banner-core p {
+  margin-top: .9rem;
+  max-width: 9rem;
+  font-size: .72rem;
+  line-height: 1.35;
+  color: rgba(255,255,255,.84);
+}
+
+.astro-banner-star {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+  text-shadow: 0 0 16px #fff, 0 0 26px #9d64ff;
+}
+
+.astro-photo-dot {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  z-index: 8;
+  background: linear-gradient(135deg, #bd5cff, #4b9cff);
+  box-shadow: 0 0 20px rgba(147, 88, 255, .8);
+  animation: astro-banner-dot 5s ease-in-out infinite;
+}
+
+.astro-photo-dot-a { left: 7%; top: 30%; }
+.astro-photo-dot-b { right: 2%; top: 28%; animation-delay: -1.8s; }
+.astro-photo-dot-c { right: 8%; bottom: 14%; animation-delay: -3.1s; }
+
+@keyframes astro-banner-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -9px; }
+}
+
+@keyframes astro-banner-breathe {
+  0%, 100% { transform: scale(.98); opacity: .72; }
+  50% { transform: scale(1.04); opacity: 1; }
+}
+
+@keyframes astro-banner-core-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(.98); }
+  50% { transform: translate(-50%, -50%) scale(1.03); }
+}
+
+@keyframes astro-banner-orbit-a {
+  0%, 100% { transform: rotate(13deg) scale(1); opacity: .52; }
+  50% { transform: rotate(16deg) scale(1.025); opacity: .86; }
+}
+
+@keyframes astro-banner-orbit-b {
+  0%, 100% { transform: rotate(-20deg) scale(1); opacity: .48; }
+  50% { transform: rotate(-17deg) scale(1.03); opacity: .76; }
+}
+
+@keyframes astro-banner-dot {
+  0%, 100% { transform: scale(.88); opacity: .72; }
+  50% { transform: scale(1.18); opacity: 1; }
+}
+
+@media (max-width: 1100px) {
+  .astro-reference-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .astro-reference-copy {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .astro-reference-copy > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .astro-reference-copy > div:not(.astro-reference-benefits) {
+    justify-content: center;
+  }
+
+  .astro-reference-benefits {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .astro-photo-banner {
+    min-height: 520px;
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .astro-reference-hero {
+    min-height: auto;
+  }
+
+  .astro-reference-benefits {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+  }
+
+  .astro-reference-benefits > div {
+    justify-content: flex-start;
+  }
+
+  .astro-photo-banner {
+    min-height: 420px;
+    margin-top: .75rem;
+  }
+
+  .astro-banner-photo-main {
+    width: 64%;
+    height: 42%;
+    right: 1%;
+  }
+
+  .astro-banner-photo-small {
+    width: 40%;
+    height: 27%;
+    top: 33%;
+  }
+
+  .astro-banner-photo-team {
+    width: 58%;
+    height: 31%;
+    bottom: 5%;
+  }
+
+  .astro-banner-core {
+    width: 34%;
+    left: 37%;
+    top: 53%;
+  }
+
+  .astro-banner-core p {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .astro-photo-banner::before,
+  .astro-photo-orbit,
+  .astro-banner-photo,
+  .astro-banner-core,
+  .astro-photo-dot {
+    animation: none !important;
+  }
+}
+
+.high-contrast .astro-photo-orbit,
+.high-contrast .astro-photo-dot,
+.high-contrast .astro-photo-banner::before {
+  display: none;
+}
