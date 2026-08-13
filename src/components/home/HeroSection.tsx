@@ -1,9 +1,13 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BarChart3, Rocket, Target, Users } from "lucide-react";
-import atendimentoImg from "@/assets/bot-whatsapp.jpg";
-import processosImg from "@/assets/solution-hero.png";
 import equipeImg from "@/assets/treinamento-cientifico.jpg";
+
+const atendimentoImg =
+  "https://images.unsplash.com/photo-1766066014237-00645c74e9c6?auto=format&fit=crop&fm=jpg&q=80&w=1400";
+
+const processosImg =
+  "https://images.unsplash.com/photo-1758873268444-73528cd3ec93?auto=format&fit=crop&fm=jpg&q=80&w=1200";
 
 const WA_HERO =
   "https://wa.me/5551981520555?text=" +
@@ -90,10 +94,10 @@ const HeroSection: React.FC = () => {
             <div className="astro-photo-dot astro-photo-dot-c" aria-hidden="true" />
 
             <figure className="astro-banner-photo astro-banner-photo-main">
-              <img src={atendimentoImg} alt="Atendimento organizado ao cliente" />
+              <img src={atendimentoImg} alt="Profissional de atendimento trabalhando com sua equipe" />
             </figure>
             <figure className="astro-banner-photo astro-banner-photo-small">
-              <img src={processosImg} alt="Análise de processos e indicadores" />
+              <img src={processosImg} alt="Profissionais analisando e organizando processos em conjunto" />
             </figure>
             <figure className="astro-banner-photo astro-banner-photo-team">
               <img src={equipeImg} alt="Equipe trabalhando de forma organizada" />
