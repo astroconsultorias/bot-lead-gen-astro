@@ -12,28 +12,33 @@ const HeroSection: React.FC = () => {
   return (
     <section
       id="top"
-      className="relative min-h-[78vh] flex items-center overflow-hidden bg-gradient-to-br from-background via-secondary to-background"
+      className="astro-hero relative min-h-[85svh] flex items-center overflow-hidden"
     >
-      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-float" />
-        <div
-          className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "1.5s" }}
-        />
+      <div className="astro-hero-space absolute inset-0" aria-hidden="true">
+        <div className="astro-stars astro-stars-a" />
+        <div className="astro-stars astro-stars-b" />
+        <div className="astro-nebula astro-nebula-a" />
+        <div className="astro-nebula astro-nebula-b" />
+        <div className="astro-orbit-wrap">
+          <div className="astro-orbit astro-orbit-one" />
+          <div className="astro-orbit astro-orbit-two" />
+          <div className="astro-orbit-core" />
+        </div>
+        <div className="astro-hero-overlay" />
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10 py-16">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 py-20 md:py-24">
         <div className="max-w-4xl mx-auto text-center text-foreground space-y-8 animate-fade-in-up">
-          <span className="inline-block text-xs md:text-sm font-semibold tracking-wider uppercase text-accent border border-accent/30 rounded-full px-4 py-1.5 bg-accent/5">
+          <span className="inline-block text-xs md:text-sm font-semibold tracking-wider uppercase text-accent border border-accent/30 rounded-full px-4 py-1.5 bg-background/30 backdrop-blur-md shadow-soft">
             Consultoria operacional para pequenas empresas
           </span>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight drop-shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
             Sua empresa cresceu. Seus processos{" "}
-            <span className="text-accent">acompanharam?</span>
+            <span className="text-accent astro-text-glow">acompanharam?</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/85 max-w-3xl mx-auto leading-relaxed">
             A Astro identifica gargalos em atendimento, processos e operação e ajuda sua empresa a transformar improviso, retrabalho e falta de controle em uma rotina mais organizada.
           </p>
 
@@ -41,7 +46,7 @@ const HeroSection: React.FC = () => {
             <Button
               size="lg"
               asChild
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-6 text-lg shadow-gold hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-6 text-lg shadow-gold hover:shadow-xl transition-all duration-300 hover:scale-[1.03]"
             >
               <a
                 href={WA_HERO}
@@ -59,7 +64,7 @@ const HeroSection: React.FC = () => {
               size="lg"
               asChild
               variant="outline"
-              className="border-2 border-foreground/30 bg-foreground/5 text-foreground hover:bg-foreground/10 font-semibold backdrop-blur-sm"
+              className="border-2 border-foreground/25 bg-background/20 text-foreground hover:bg-background/35 font-semibold backdrop-blur-md"
             >
               <a href="#metodo" aria-label="Entender como a Astro trabalha">
                 Como funciona
